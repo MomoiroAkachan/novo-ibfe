@@ -1,0 +1,61 @@
+
+{{-- navbars --}}
+<div class="navbar mx-4 my-2 flex flex-row flex-nowrap items-center justify-between">
+
+    {{-- navbar logo --}}
+    <div class="navbar-brand flex flex-row items-center">
+        <svg height="48" width="48" xmlns="http://www.w3.org/2000/svg">
+            <circle cx='24' cy='24' fill='#cccccc' r='24'></circle>
+        </svg>
+        <h1 class="ml-4 text-slate-700" style="font-family: 'Varela Round', sans-serif; font-weight:bolder; font-size: 22pt;">iBFE</h1>
+    </div>
+
+    {{-- navbar scope --}}
+    <div class="navbar-nav flex flex-row items-center justify-center">
+
+        {{-- navbar links --}}
+        <ul class='navbar-links mr-4 flex list-none flex-row'>
+
+            @foreach ([['home', 'Home'], ['services', 'Serviços'], ['about', 'Sobre'], ['questionary', 'Questionário']] as $item)
+                <li><a class="{{ $page == $item[0] ? 'sel' : 'unsel' }}" href="{{ route($item[0]) }}">{{ $item[1] }}</a>
+                    <div class="s-flag {{ $page == $item[0] ? 'ssel' : '' }}"></div>
+                </li>
+            @endforeach
+        </ul>
+
+        {{-- navbar search bar --}}
+        <div class="navbar-search flex w-24 flex-row">
+            <button class="h-6 w-6 rounded-sm border border-solid shadow-sm" onclick="show_searchbar"><i class="material-symbols-rounded text-slate-700">search</i></button>
+            <div class="hidden" id="searchbar-area">simple</div>
+        </div>
+    </div>
+</div>
+
+
+
+.navbar-links li a .sel
+{
+    color: theme('colors.sky.600');
+}
+
+.navbar-links li{
+    margin-right: 1.5rem;
+}
+
+.navbar-links li a .unsel{
+    color: black;
+}
+
+.navbar-links li a:hover{
+    color: theme('colors.sky.600');
+}
+
+.navbar-links li a:disabled{
+    color: theme('colors.gray.600');
+}
+
+.s-flag.ssel{
+    width: 80%;
+    height: 2px;
+    background-color: theme('colors.sky.500');
+}

@@ -1,3 +1,136 @@
+/* Fonte Roboto sans - Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --back-z: 0;
+    --obj-z: 5;
+    --hud-z: 10;
+}
+
+* {
+    font: "Roboto";
+    font-weight: normal;
+}
+
+html,
+body {
+    border: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Classe 'invisivel' */
+.ie-inv {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: inherit;
+    flex: inherit;
+    flex-direction: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.ie-dialog {
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem;
+    color: white;
+    z-index: var(--hud-z);
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: large;
+    transition: all 0.3s ease;
+}
+
+.ie-dialog * {
+    display: block;
+}
+
+.ie-dialog p {
+    margin: 0 0.5rem;
+}
+
+.ie-dialog .ie-dialog-closure {
+    transition: all 0.3s;
+    padding: 0.25rem;
+    border-radius: 0.2rem;
+}
+
+.ie-dialog .ie-dialog-closure img {
+    width: 1rem;
+}
+
+.ie-dialog .ie-dialog-closure:hover {
+    outline: 1px solid black;
+    background-color: #fdc4;
+}
+
+.ie-dialog-alert {
+    background-color: theme("colors.red.400");
+}
+.ie-dialog-warning {
+    background-color: theme("colors.orange.400");
+}
+.ie-dialog-message {
+    background-color: theme("colors.sky.400");
+}
+
+#ie-navbar-links-list li {
+    margin: 0 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+#ie-navbar-links-list li a {
+    transition: color 0.2s linear;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+
+#ie-navbar-links-list li a:hover {
+    color: theme('colors.sky.600');
+}
+
+.ie-navbar-route-indicator-selected{
+    transition: all .3 ease;
+    background-color: theme('colors.emerald.400');
+    animation: .3s linear 0s 1 ie-nav-appear;
+    animation-fill-mode: forwards;
+}
+
+.ie-navbar-route-indicator-unselected{
+    transition: all .3 ease;
+    width: 0;
+}
+
+#ie-blur-screen{
+    animation: .3s linear 0s 1 ie-fadein;
+    animation-fill-mode: forwards;
+}
+
+@keyframes ie-nav-appear {
+    from{
+        width: 0%;
+    }
+    to{
+        width: 95%;
+    }
+}
+
+@keyframes ie-fadein {
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
