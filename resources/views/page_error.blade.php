@@ -3,5 +3,5 @@
 @section('title', 'Erro')
 
 @section('content')
-    
+    ERRO
 @endsection

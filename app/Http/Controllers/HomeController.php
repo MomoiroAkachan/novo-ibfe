@@ -8,25 +8,31 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');//, ['message_type' => 'warning', 'message' => 'Testando mensagens']);
+        return view('home'); //, ['message_type' => 'warning', 'message' => 'Testando mensagens']);
     }
 
-    public function services(){
+    public function services()
+    {
         return view('services');
     }
-    public function questionary(){
+    public function questionary()
+    {
         return view('questionary');
     }
-    public function about(){
+    public function about()
+    {
         return view('about');
     }
-    public function coming_soon(){
+    public function coming_soon()
+    {
         return view('coming_soon');
     }
-    public function page_error($id){
+    public function page_error($id)
+    {
         return view('page_error');
     }
-    public function questionary_result(){
+    public function questionary_result()
+    {
         return view('questionary_result');
     }
 }

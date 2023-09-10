@@ -12,7 +12,7 @@
 }
 
 * {
-    font: "Roboto";
+    font-family: "Roboto";
     font-weight: normal;
 }
 
@@ -117,20 +117,48 @@ body {
     animation-fill-mode: forwards;
 }
 
+.ie-caroussel{
+    overflow: hidden;
+    display: absolute;
+}
+
+.ie-caroussel .ie-item{
+    animation: .8s linear ie-slide;
+    position: relative;
+    display: none;
+}
+
+.ie-caroussel .ie-item.active{
+    display: flex;
+}
+
 @keyframes ie-nav-appear {
     from{
         width: 0%;
     }
     to{
-        width: 95%;
+        width: 85%;
     }
 }
 
-@keyframes ie-fadein {
+@keyframes ie-fade {
     from{
-        opacity: 0%;
+        opacity: 0;
     }
     to{
-        opacity: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes ie-slide {
+    from{
+        transform: translate(-100%);
+        opacity: 0;
+        display: none;
+    }
+    to{
+        transform: translate(0);
+        opacity: 1;
+        display: flex;
     }
 }

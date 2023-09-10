@@ -2,6 +2,6 @@
 
 @section('title', 'Serviços')
 
-@section('content')
-    
+@section("content")
+
 @endsection
