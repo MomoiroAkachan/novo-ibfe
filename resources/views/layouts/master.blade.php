@@ -13,24 +13,38 @@
 </head>
 
 <body>
-    <div class="fixed top-0 right-0 px-[1rem]">
-        <button id="theme-switch" class="text-sm hover:bg-white hover:outline hover:outline-2 hover:text-black bg-black text-white transition-all rounded-sm px-[.5rem] font-black">MUDAR</button>
+    <div class="dark:bg-slate-800 dark:text-slate-300 w-full h-full" id="ie-theme-config">
+        {{-- Botão de troca de tema, escuro para claro --}}
+        <div class="fixed right-0 top-0 p-4 px-[1rem]">
+            <button class="rounded-sm bg-black px-[1rem] py-[.5rem] text-sm font-black uppercase text-white transition-all hover:bg-white hover:text-black hover:outline hover:outline-2" id="theme-switch">tema</button>
+        </div>
+
+        {{-- Navbar do site --}}
+        <x-ie_landing_navbar />
+
+        {{-- Facha verde --}}
+        <div class="mx-[1rem] h-[.2rem] flex-1 bg-emerald-400 lg:h-[.5rem]"></div>
+
+        {{-- Tela blur/desfocada --}}
+        <div class="fixed left-0 top-0 z-10 hidden h-full w-full items-center justify-center bg-[#0000002a] backdrop-blur-sm" id="ie-blur-screen">
+        </div>
+
+        {{-- Conteúdo pré-contexto --}}
+        @yield('pre-content')
+
+        {{-- Contexto da página --}}
+        <div class="z-0 flex flex-col px-[10%] md:px-[12%] lg:px-[18%]" id="page-content">
+            @yield('content')
+        </div>
+
+        {{-- Conteúdo pós-contexto --}}
+        @yield('post-content')
+
+        {{-- Caixas de Mensagem, ie-framework --}}
+        @isset($message_type)
+            <x-page_dialog :type='$message_type' :message='$message' />
+        @endisset
     </div>
-
-    <x-ie_landing_navbar />
-    <div class="h-[.2rem] lg:h-[.5rem] flex-1 bg-emerald-400 mx-[1rem]"></div>
-    <div class="fixed left-0 top-0 z-10 bg-[#0000002a] flex items-center justify-center w-full h-full backdrop-blur-md" id="ie-blur-screen" style="display: none;"></div>
-
-    @yield('pre-content')
-
-    <div class="pg-context z-0 px-[1.5rem] flex flex-col">
-        @yield('content')
-    </div>
-
-    @yield('post-content')
-
-    @isset($message_type)
-        <x-page_dialog :type='$message_type' :message='$message' />
-    @endisset
 </body>
+
 </html>
