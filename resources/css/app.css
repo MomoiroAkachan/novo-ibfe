@@ -1,5 +1,7 @@
 /* Fonte Roboto sans - Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -9,14 +11,14 @@
     --back-z: 0;
     --obj-z: 5;
     --hud-z: 10;
+    --hud-1: 15;
+    --dark-bg: theme("colors.slate.800");
+    --dark-fg: theme("colors.slate.100");
 }
 
 * {
     font-family: "Roboto";
     font-weight: normal;
-    transition:
-        color 0.5s ease,
-        background-color 0.5s ease;
 }
 
 html,
@@ -108,7 +110,8 @@ body {
 #ie-navbar-links-list li a {
     transition: color 0.2s linear;
     text-transform: capitalize;
-    font-size: 1.2rem;
+    font-size: medium;
+    font-family: "Jost";
 }
 
 .ie-navbar-route-indicator-selected {
@@ -172,4 +175,83 @@ body {
         opacity: 1;
         display: flex;
     }
+}
+
+.ie-card {
+    @apply flex h-fit flex-col rounded-md px-8 py-4 border-slate-300 border;
+    box-shadow: 2px 4px 12px rgba(20, 28, 30, 0.15);
+    transition: all 0.5s;
+}
+
+.ie-card:focus {
+    @apply border border-sky-600;
+}
+
+.ie-card .head .title {
+    @apply text-center font-bold text-slate-800;
+    font-size: 2rem;
+}
+
+.ie-card .head .subtitle {
+    @apply w-[55%] text-left;
+    font-size: 0.7rem;
+}
+
+.ie-card fieldset {
+    @apply my-3 flex h-fit w-full flex-col text-sm;
+}
+
+.ie-card fieldset label {
+    @apply font-normal text-slate-700;
+}
+.ie-card input, .ie-card select {
+    @apply rounded-md border font-light border-slate-300 bg-transparent px-2 py-3 text-xs text-slate-900;
+    transition: all 0.3s ease;
+}
+
+.ie-card option{
+    @apply text-slate-800;
+}
+
+.ie-card input:focus:hover,
+.ie-card input:focus,
+.ie-card select:focus:hover,
+.ie-card select:focus {
+    outline: 2px solid theme("colors.sky.500");
+    border-color: theme("colors.sky.500");
+}
+
+.ie-card input:hover {
+    outline: 1px solid theme("colors.sky.500");
+    border-color: theme("colors.sky.500");
+}
+.ie-card .detail {
+    @apply my-4 flex w-full flex-row items-center;
+    font-size: 0.6rem;
+}
+.ie-card .detail hr {
+    @apply flex-grow;
+}
+
+.ie-card .detail span {
+    @apply mx-2;
+}
+
+.ie-card .google-login {
+    @apply flex flex-row items-center justify-center rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-500 transition-all;
+    box-shadow: 1px 2px 3px rgba(20, 28, 30, 0.15);
+}
+
+.ie-card .google-login:hover {
+    box-shadow: 2px 3px 3px rgba(20, 28, 30, 0.15);
+}
+.ie-card .google-login img {
+    width: 1rem;
+    margin-right: 0.5rem;
+}
+
+/* Dark theme support */
+.dark > div {
+    background-color: var(--dark-bg) !important;
+    color: var(--dark-fg) !important;
 }

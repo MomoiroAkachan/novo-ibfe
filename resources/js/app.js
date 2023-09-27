@@ -30,15 +30,3 @@ ie_blur_screen.on('click', function (e) {
         $(this).css('display', 'none')
     }
 })
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Evento de clique no botão para alternar o tema
-    $('#theme-switch').on('click', function () {
-        $('body').toggleClass('dark');
-        const temaAtual = $('body').hasClass('dark') ? 'dark' : '';
-        localStorage.setItem('theme', temaAtual)
-        console.log(localStorage)
-    });
-});
-
-$('body').toggleClass(localStorage.getItem('theme'));

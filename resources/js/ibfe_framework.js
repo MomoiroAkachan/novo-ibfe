@@ -28,12 +28,32 @@ class ie_Caroussel {
         }, this.$interval);
     }
 }
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Evento de clique no botão para alternar o tema
+    
+});
+
+
+console.log($('body').parent())
+
 document.addEventListener('DOMContentLoaded', function () {
     try {
         $(".ie-caroussel").each(function () {
             let u_ca = new ie_Caroussel(this)
             u_ca.start()
         })
+
+        const $html = $('html')
+
+        $html.toggleClass(localStorage.getItem('theme'));
+
+        $('#theme-switch').on('click', function () {
+            $html.toggleClass('dark');
+            const temaAtual = $html.hasClass('dark') ? 'dark' : '';
+            localStorage.setItem('theme', temaAtual)
+        });
     }
     catch (e) {
         console.log("ERRO!: ")

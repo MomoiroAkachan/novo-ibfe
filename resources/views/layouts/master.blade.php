@@ -12,18 +12,16 @@
     @yield('head')
 </head>
 
-<body>
-    <div class="dark:bg-slate-800 dark:text-slate-300 w-full h-full" id="ie-theme-config">
-        {{-- Botão de troca de tema, escuro para claro --}}
-        <div class="fixed right-0 top-0 p-4 px-[1rem]">
-            <button class="rounded-sm bg-black px-[1rem] py-[.5rem] text-sm font-black uppercase text-white transition-all hover:bg-white hover:text-black hover:outline hover:outline-2" id="theme-switch">tema</button>
-        </div>
-
+<body class="dark:bg-slate-800 dark:text-slate-300">
+    <div class="h-full w-full" id="ie-theme-config">
         {{-- Navbar do site --}}
         <x-ie_landing_navbar />
 
+        {{-- Espaçador --}}
+        <div class="spacer w-full h-14"></div>
+
         {{-- Facha verde --}}
-        <div class="mx-[1rem] h-[.2rem] flex-1 bg-emerald-400 lg:h-[.5rem]"></div>
+        <div class="h-[.2rem] flex-1 bg-emerald-400 lg:h-[.5rem]"></div>
 
         {{-- Tela blur/desfocada --}}
         <div class="fixed left-0 top-0 z-10 hidden h-full w-full items-center justify-center bg-[#0000002a] backdrop-blur-sm" id="ie-blur-screen">
@@ -44,6 +42,39 @@
         @isset($message_type)
             <x-page_dialog :type='$message_type' :message='$message' />
         @endisset
+
+        {{-- Espaçamento para o rodapé --}}
+        <div class="m-[20%] w-full"></div>
+
+        {{-- Rodapé --}}
+        <footer class="flex h-fit mb-4 w-full justify-between flex-row text-sm md:text-base px-[10%] md:px-[12%] lg:px-[18%]">
+            <div class="flex flex-1 flex-col pr-[10%]">
+                <p class="font-light text-xs md:text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <ul class="mt-2 flex list-none flex-row flex-wrap">
+                    <li><img class="w-[1rem]" alt="Logotipo do Facebook" src="https://www.svgrepo.com/show/424922/facebook-logo-meta-2.svg"></li>
+                    <li><img class="w-[1rem]" alt="Logotipo do linkedin" src="https://www.svgrepo.com/show/447416/linkedin.svg"></li>
+                    <li><img class="w-[1rem]" alt="Logotipo do twitter" src="https://www.svgrepo.com/show/364957/twitter-logo-fill.svg"></li>
+                    <li><img class="w-[1rem]" alt="Logotipo do Instagram" src="https://www.svgrepo.com/show/424911/instagram-logo-facebook-2.svg"></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-1 flex-col w-fit">
+                <h5 class="mb-3 font-serif font-semibold">Páginas</h5>
+                <ul class="pages-list list-none text-xs md:text-sm">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Questionário</a></li>
+                    <li><a href="#">Serviços</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-1 flex-col">
+                <h5 class="mb-3 font-serif font-semibold">Contate-nos</h5>
+                <p class="my-2 text-xs">Rua A, nº95, Bairro B, Teófilo Otoni - MG</p>
+                <p class="my-2 text-xs">ibfe@ibfmail.com</p>
+                <p class="my-2 text-xs">+55 (33) 9 1232 - 4924</p>
+            </div>
+        </footer>
     </div>
 </body>
 

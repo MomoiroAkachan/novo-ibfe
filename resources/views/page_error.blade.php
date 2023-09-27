@@ -1,7 +1,7 @@
-@extends('layouts.master')
+@extends('layouts.blank')
 
-@section('title', 'Erro')
+@section('title', 'ERRO')
 
 @section('content')
-    ERRO
+    <h1 class="text-[8rem] bg-inherit text-inherit uppercase">erro!</h1>
 @endsection
