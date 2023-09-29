@@ -7,6 +7,11 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>@yield('title') / {{ Str::upper(config('app.name')) }}</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    @production
+        <link href="{{ assets('build/assets/app-a235776a.css') }}" rel="stylesheet">
+    @endproduction
+
     @vite(['resources/css/app.css', 'resources/js/ibfe_framework.js'])
 
     @yield('head')
@@ -18,7 +23,7 @@
         <x-ie_landing_navbar />
 
         {{-- Espaçador --}}
-        <div class="spacer w-full h-14"></div>
+        <div class="spacer h-14 w-full"></div>
 
         {{-- Facha verde --}}
         <div class="h-[.2rem] flex-1 bg-emerald-400 lg:h-[.5rem]"></div>
@@ -47,18 +52,18 @@
         <div class="m-[20%] w-full"></div>
 
         {{-- Rodapé --}}
-        <footer class="flex h-fit mb-4 w-full justify-between flex-row text-sm md:text-base px-[10%] md:px-[12%] lg:px-[18%]">
+        <footer class="mb-4 flex h-fit w-full flex-row justify-between px-[10%] text-sm md:px-[12%] md:text-base lg:px-[18%]">
             <div class="flex flex-1 flex-col pr-[10%]">
-                <p class="font-light text-xs md:text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p class="text-xs font-light md:text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 <ul class="mt-2 flex list-none flex-row flex-wrap">
-                    <li><img class="w-[1rem]" alt="Logotipo do Facebook" src="https://www.svgrepo.com/show/424922/facebook-logo-meta-2.svg"></li>
-                    <li><img class="w-[1rem]" alt="Logotipo do linkedin" src="https://www.svgrepo.com/show/447416/linkedin.svg"></li>
-                    <li><img class="w-[1rem]" alt="Logotipo do twitter" src="https://www.svgrepo.com/show/364957/twitter-logo-fill.svg"></li>
-                    <li><img class="w-[1rem]" alt="Logotipo do Instagram" src="https://www.svgrepo.com/show/424911/instagram-logo-facebook-2.svg"></li>
+                    <li><img alt="Logotipo do Facebook" class="w-[1rem]" src="https://www.svgrepo.com/show/424922/facebook-logo-meta-2.svg"></li>
+                    <li><img alt="Logotipo do linkedin" class="w-[1rem]" src="https://www.svgrepo.com/show/447416/linkedin.svg"></li>
+                    <li><img alt="Logotipo do twitter" class="w-[1rem]" src="https://www.svgrepo.com/show/364957/twitter-logo-fill.svg"></li>
+                    <li><img alt="Logotipo do Instagram" class="w-[1rem]" src="https://www.svgrepo.com/show/424911/instagram-logo-facebook-2.svg"></li>
                 </ul>
             </div>
 
-            <div class="flex flex-1 flex-col w-fit">
+            <div class="flex w-fit flex-1 flex-col">
                 <h5 class="mb-3 font-serif font-semibold">Páginas</h5>
                 <ul class="pages-list list-none text-xs md:text-sm">
                     <li><a href="#">Home</a></li>
@@ -76,6 +81,11 @@
             </div>
         </footer>
     </div>
-</body>
 
+</body>
+@production
+    <script src="{{ asset('build/assets/app-9795af21.js') }}"></script>
+    <script src="{{ asset('build/assets/ibfe_framework-02bf8553.js') }}"></script>
+    <script src="{{ asset('build/assets/master-4ed993c7.js') }}"></script>
+@endproduction
 </html>

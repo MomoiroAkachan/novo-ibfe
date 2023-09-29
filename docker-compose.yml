@@ -23,6 +23,8 @@ services:
             - sail
         depends_on:
             - mysql
+        user: "ibfe"  # Substitua pelo nome de usuário apropriado
+
     mysql:
         image: 'mysql/mysql-server:8.0'
         ports:
