@@ -3,45 +3,69 @@
 @section('title', 'Questionário')
 
 @section('content')
-<div class="spacer w-full h-[5rem]"></div>
+    <div class="spacer h-[5rem] w-full"></div>
     <div class="ie-card w-[50%] self-center">
         <div class="head">
             <h2 class="title">Perfil</h2>
-            <p class="subtitle"><span class="text-red-500">*</span>Nos conte mais sobre você.</p>
         </div>
+        <hr>
+        <p class="my-2 text-xs"><span class="text-red-500">*</span>Que tal falar mais sobre você?</p>
         <div class="body">
-            <form action="{{ route('survey.next') }}" method="post" class="flex flex-col">
+            <form action="{{ route('survey.survey.index') }}" class="flex flex-col" method="get">
                 @csrf
-                <fieldset class="f-nome">
-                    <label for="nome">Nome ou Apelido</label>
-                    <input id="nome" name="nome" placeholder="e.g. João Silva" required type="text">
-                </fieldset>
-                <fieldset class="f-cidade">
-                    <label for="cidade">Cidade Atual</label>
-                    <input id="cidade" name="cidade" placeholder="e.g. Teófilo Otoni" required type="text">
-                </fieldset>
-                <fieldset class="f-email">
-                    <label for="email">E-mail</label>
-                    <input id="email" name="email" placeholder="e.g. joao@email.com" required type="email">
-                </fieldset>
-                <fieldset class="f-tel">
-                    <label for="telefone">Número de Telefone</label>
-                    <input id="telefone" name="telefone" placeholder="e.g. 00 9 112222222" required type="tel" pattern="([0-9]{2})9([0-9]{8})">
-                </fieldset>
-                <fieldset class="f-sexo">
-                    <label for="sexo">Sexo</label>
-                    <select id="sexo" name="sexo" required>
-                        <option disabled selected value="">selecione...</option>
-                        <option value="mas">Masculino</option>
-                        <option value="fem">Feminino</option>
-                        <option value="out">Outro</option>
-                    </select>
-                </fieldset>
-                <fieldset class="f-bdata">
-                    <label for="bdata">Data Nasc.</label>
-                    <input id="bdata" name="bdata" required type="date">
-                </fieldset>
-                <button type="submit" class="bg-emerald-500 px-3 rounded self-end py-1 text-white hover:text-emerald-800 font-semibold hover:outline-emerald-500 hover:outline transition-colors hover:outline-2 hover:bg-white"><span>Prosseguir</span></button>
+                <div class="flex flex-row">
+                    <section class="fsec flex w-full flex-col">
+                        <fieldset class="f-nome">
+                            <label for="nome">Nome ou Apelido</label>
+                            <input id="nome" name="nome" placeholder="Nome ou Apelido" required type="text">
+                        </fieldset>
+                        <fieldset class="f-cidade">
+                            <label for="cidade">Cidade Atual</label>
+                            <input id="cidade" name="cidade" placeholder="Cidade onde mora" required type="text">
+                        </fieldset>
+                        <fieldset class="f-email">
+                            <label for="email">E-mail</label>
+                            <input id="email" name="email" placeholder="E-mail" required type="email">
+                        </fieldset>
+                        <fieldset class="f-tel">
+                            <label for="telefone">Número de Telefone</label>
+                            <input id="telefone" name="telefone" pattern="([0-9]{2})9([0-9]{8})" placeholder="Número de Telefone" required type="tel">
+                        </fieldset>
+                    </section>
+
+                    <div class="w-[1px] mx-4 my-[2rem] bg-slate-500">
+                    </div>
+
+                    <section class="fsec flex w-full flex-col">
+                        <fieldset class="f-sexo">
+                            <label for="sexo">Sexo</label>
+                            <select id="sexo" name="sexo" required>
+                                <option disabled selected value="">Sexo</option>
+                                <option value="mas">Masculino</option>
+                                <option value="fem">Feminino</option>
+                                <option value="out">Outro</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="f-bdata">
+                            <label for="bdata" style="display: block !important;">Nasceu em:</label>
+                            <input id="bdata" name="bdata" required type="date">
+                        </fieldset>
+
+                        <fieldset class="f-religiao">
+                            <label style="display: block !important;"   for="religiao">O quão importante é a religião para sua vida?</label>
+                            <select id="religiao" name="religiao">
+                                <option disabled selected value="">selecione...</option>
+                                <option value="5">Muito Importante</option>
+                                <option value="4">Importante</option>
+                                <option value="3">Neutro</option>
+                                <option value="2">Pouco Importante</option>
+                                <option value="1">Nenhuma Importância</option>
+                            </select>
+                        </fieldset>
+                    </section>
+                </div>
+                <div class="spacer flex w-full h-[2rem]"></div>
+                <button class=" self-center rounded mb-[2rem] bg-emerald-500 px-3 py-1 font-semibold text-white transition-colors hover:bg-white hover:text-emerald-800 hover:outline hover:outline-2 hover:outline-emerald-500" type="submit"><span>Prosseguir</span></button>
             </form>
         </div>
         <div class="footer">

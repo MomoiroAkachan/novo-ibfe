@@ -9,29 +9,34 @@ class SurveyController extends Controller
 {
     public $v_numQuestions = null;
     public $v_maxQuestions = null;
+    public $v_maxPages = null;
     
     function __construct()
     {
         $this->v_numQuestions = Question::all()->count();
         $this->v_maxQuestions = 5;
+        $this->v_maxPages = ceil(Question::all()->count() / 5);
     }
 
     // Mostra o questionário como página
-    public function index()
+    public function profile_index(Request $request)
     {
-        return view('questionary');
+        return view('survey.survey');
+    }
+    public function profile_store(){
+
     }
 
-    public function next(Request $r)
+    public function survey_store(Request $request)
     {
-        $page_index = $r->input('pg_index') % $this->v_maxQuestions;
-        $questions = Question::all()->skip(5 * $page_index)->take(5)->toArray();
-        return view('questionary_questions')->with('p_index', $page_index)->with('quest', $questions)->with('qmax', $this->v_maxQuestions);
-        
-        // return view('survey_sheet')->with('questions', $questions)->with('iIndex', $idx);
+        return redirect()->route('survey.survey_index');
     }
 
-    public function prev(Request $r){
-        return view('survey_sheet');
+    public function survey_index(Request $r)
+    {
+        $questions = Question::all();
+        return view('survey.questions', [
+            'quest' => $questions
+        ]);
     }
 }

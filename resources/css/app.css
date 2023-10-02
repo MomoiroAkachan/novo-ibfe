@@ -178,7 +178,7 @@ body {
 }
 
 .ie-card {
-    @apply flex h-fit flex-col rounded-md px-8 py-4 border-slate-300 border;
+    @apply flex h-fit flex-col rounded-md px-8 py-4 border-slate-300 border w-[75%];
     box-shadow: 2px 4px 12px rgba(20, 28, 30, 0.15);
     transition: all 0.5s;
 }
@@ -202,10 +202,13 @@ body {
 }
 
 .ie-card fieldset label {
-    @apply font-normal text-slate-700;
+    @apply font-normal text-base text-slate-700 w-full;
+}
+.ie-card label{
+    display: none;
 }
 .ie-card input, .ie-card select {
-    @apply rounded-md border font-light border-slate-300 bg-transparent px-2 py-3 text-xs text-slate-900;
+    @apply w-full rounded-md border font-light border-slate-300 bg-transparent px-[.35rem] py-[.5rem] text-sm text-slate-900;
     transition: all 0.3s ease;
 }
 
@@ -217,7 +220,7 @@ body {
 .ie-card input:focus,
 .ie-card select:focus:hover,
 .ie-card select:focus {
-    outline: 2px solid theme("colors.sky.500");
+    outline: 1px solid theme("colors.sky.500");
     border-color: theme("colors.sky.500");
 }
 
@@ -254,4 +257,29 @@ body {
 .dark > div {
     background-color: var(--dark-bg) !important;
     color: var(--dark-fg) !important;
+}
+
+/* Estilos gerais para o contêiner */
+.ibfe-ver .ie-item {
+    @apply my-[1rem] w-[29%] flex-col items-center rounded-xl border bg-white px-4 py-2 text-center shadow-lg hidden;
+}
+
+/* Estilos para o título */
+.ibfe-ver .ie-title {
+    @apply mb-4 font-serif text-base font-bold uppercase md:text-2xl lg:text-2xl;
+}
+
+/* Estilos para a descrição */
+.ibfe-ver .ie-description {
+    @apply mb-2 text-sm md:text-base;
+}
+
+/* Estilos para o link */
+.ibfe-ver .ie-link {
+    @apply flex h-fit w-full flex-row flex-nowrap items-center justify-center p-0 text-xs transition-colors hover:text-sky-700 dark:hover:text-emerald-400;
+}
+
+/* Estilos para o ícone */
+.ibfe-ver .material-icons {
+    @apply text-sm;
 }

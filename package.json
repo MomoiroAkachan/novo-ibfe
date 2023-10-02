@@ -2,6 +2,7 @@
     "private": true,
     "type": "module",
     "scripts": {
+        "clean": "rm -rf 'public/build' || rd /s /q 'public/build'",
         "dev": "vite",
         "build": "vite build"
     },

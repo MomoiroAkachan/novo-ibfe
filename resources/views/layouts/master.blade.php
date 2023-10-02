@@ -54,7 +54,7 @@
         {{-- Rodapé --}}
         <footer class="mb-4 flex h-fit w-full flex-row justify-between px-[10%] text-sm md:px-[12%] md:text-base lg:px-[18%]">
             <div class="flex flex-1 flex-col pr-[10%]">
-                <p class="text-xs font-light md:text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p class="text-xs font-light md:text-sm">Esta ferramenta é propriedade do Instituto Federal do Norte de Minas Gerais (IFNMG), por meio do registro no INPI nº BR51202300030</p>
                 <ul class="mt-2 flex list-none flex-row flex-wrap">
                     <li><img alt="Logotipo do Facebook" class="w-[1rem]" src="https://www.svgrepo.com/show/424922/facebook-logo-meta-2.svg"></li>
                     <li><img alt="Logotipo do linkedin" class="w-[1rem]" src="https://www.svgrepo.com/show/447416/linkedin.svg"></li>
@@ -75,16 +75,16 @@
 
             <div class="flex flex-1 flex-col">
                 <h5 class="mb-3 font-serif font-semibold">Contate-nos</h5>
-                <p class="my-2 text-xs">Rua A, nº95, Bairro B, Teófilo Otoni - MG</p>
-                <p class="my-2 text-xs">ibfe@ibfmail.com</p>
-                <p class="my-2 text-xs">+55 (33) 9 1232 - 4924</p>
+                <p class="my-2 text-xs">IFNMG - Campus Teófilo Otoni
+                    R. Mocambi, 295 - Viriato, Teófilo Otoni - MG, 39800-430</p>
+                <p class="my-2 text-xs">ibfe.web@ifnmg.edu.br</p>
+                <p class="my-2 text-xs">+55 (33) 3218-7364</p>
             </div>
         </footer>
     </div>
 
 </body>
 @production
-    <script src="{{ asset('build/assets/app-9795af21.js') }}"></script>
     <script src="{{ asset('build/assets/ibfe_framework-02bf8553.js') }}"></script>
     <script src="{{ asset('build/assets/master-4ed993c7.js') }}"></script>
 @endproduction

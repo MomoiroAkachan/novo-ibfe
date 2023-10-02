@@ -30,3 +30,4 @@ ie_blur_screen.on('click', function (e) {
         $(this).css('display', 'none')
     }
 })
+
