@@ -12,34 +12,39 @@
 
 @section('content')
     <div class="my-[12.5%] w-full"></div>
+
     <div class="flex h-fit w-full flex-col text-justify text-sm md:text-lg">
-        <div class="flex h-fit w-full flex-1 flex-row">
-            <div class="ml-[.3rem] flex flex-1 flex-col">
-                <h3 class="mb-4 text-left font-semibold">O que nós fazemos?</h3>
+        <div class="flex h-fit w-full flex-row justify-between">
+            <div class="w-[45%] flex flex-col">
+                <h3 class="mb-4 text-left font-semibold">Como utilizar o IBFE-Web?</h3>
                 <p class="font-light">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias ducimus deleniti temporibus ut a tempora cumque dolore sunt, ad ipsa saepe doloribus aperiam, omnis commodi id optio enim! Ab, cumque.
+                    Será apresentado um questionário com uma série de itens que representam as dimensões do IBFE. Após a resposta à bateria de itens, o sistema irá gerar o resultado e indicar o seu perfil empreendedor / intraempreendedor, e você poderá
+                    guardar, registrar e até compartilhar com outras pessoas.
                 </p>
             </div>
-            <img alt="" class="ml-1 hidden max-w-[50%] flex-1 rounded-lg md:block" src="https://mentalidadeempreendedora.com.br/wp-content/uploads/2015/08/motivos-para-empreender.jpg">
+            <img alt="" class="hidden w-[45%] rounded-lg md:block" src="{{ asset('assets/img/q-man.jpg') }}">
         </div>
     </div>
 
     <div class="mr-1 flex h-fit w-full flex-1 flex-row items-center justify-center py-4 md:px-[8%] lg:px-[12%]">
         <span class="mr-[.5rem] flex flex-col items-center justify-center text-[6cm] text-[#9fdf]">{</span>
-        <p class="mt-4 flex h-fit text-sm flex-grow-0 font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis quam maxime cum. Quo, provident. Ad omnis numquam aperiam. Fugiat, minus est quam ullam velit suscipit fuga
-            voluptatibus accusantium dolores excepturi.</p>
+        <p class="mt-4 flex h-fit flex-grow-0 text-sm font-light">
+            Leia atentamente a lista de comportamentos e características descritos no formulário de aplicação, considerando seu conteúdo. Utilizando a escala de resposta tipo Likert de 5 (cinco) pontos, variando de 1 = Não me descreve em absoluto a 5 =
+            Descreve-me totalmente; marque o número em cada item para indicar em que medida você considera que a frase lhe descreve.
+        </p>
         <span class="ml-[.5rem] flex items-center justify-center text-[6cm] text-[#9fdf]">}</span>
     </div>
 
-    <div class="mb-10 mr-1 flex w-full flex-1 flex-row-reverse justify-center">
-        <div class="ml-[.3rem] flex flex-1 flex-col text-sm">
-            <h3 class="mb-4 text-right text-sm font-semibold md:text-lg">O resultado final</h3>
+    <div class="mb-10 mr-1 flex w-full flex-row justify-between">
+        <img alt="" class="hidden w-[45%] rounded-lg md:block" src="{{ asset('assets/img/s-guy.jpeg') }}">
+        <div class="space hidden h-full px-4 lg:flex"></div>
+        <div class="w-[45%] flex flex-col text-sm">
+            <h3 class="mb-4 text-right text-sm font-semibold md:text-lg">O Resultado</h3>
             <p class="text-sm font-light md:text-lg">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias ducimus deleniti temporibus ut a tempora cumque dolore sunt, ad ipsa saepe doloribus aperiam, omnis commodi id optio enim! Ab, cumque.
+                Após a conclusão do questionário, a aplicação usará de alguns critérios antes de retornar um resultado de forma definitiva ao usuário, com base em diversos fatores. Mapeando, assim, o seu perfil empreendedor.
             </p>
         </div>
-        <div class="space hidden h-full px-4 lg:flex"></div>
-        <img alt="" class="ml-1 hidden max-w-[50%] flex-1 rounded-lg md:block" src="https://mentalidadeempreendedora.com.br/wp-content/uploads/2015/08/motivos-para-empreender.jpg">
+        
     </div>
     <div class="my-[12.5%] w-full"></div>
 

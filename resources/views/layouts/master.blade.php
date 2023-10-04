@@ -23,7 +23,7 @@
         <x-ie_landing_navbar />
 
         {{-- Espaçador --}}
-        <div class="spacer h-14 w-full"></div>
+        <div class="spacer h-[8.4rem] w-full md:h-[3.5rem]"></div>
 
         {{-- Facha verde --}}
         <div class="h-[.2rem] flex-1 bg-emerald-400 lg:h-[.5rem]"></div>
@@ -53,7 +53,7 @@
 
         {{-- Rodapé --}}
         <footer class="mb-4 flex h-fit w-full flex-row justify-between px-[10%] text-sm md:px-[12%] md:text-base lg:px-[18%]">
-            <div class="flex flex-1 flex-col pr-[10%]">
+            <div class="flex flex-1 flex-col">
                 <p class="text-xs font-light md:text-sm">Esta ferramenta é propriedade do Instituto Federal do Norte de Minas Gerais (IFNMG), por meio do registro no INPI nº BR51202300030</p>
                 <ul class="mt-2 flex list-none flex-row flex-wrap">
                     <li><img alt="Logotipo do Facebook" class="w-[1rem]" src="https://www.svgrepo.com/show/424922/facebook-logo-meta-2.svg"></li>
@@ -63,14 +63,33 @@
                 </ul>
             </div>
 
-            <div class="flex w-fit flex-1 flex-col">
-                <h5 class="mb-3 font-serif font-semibold">Páginas</h5>
-                <ul class="pages-list list-none text-xs md:text-sm">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Questionário</a></li>
-                    <li><a href="#">Serviços</a></li>
-                </ul>
+            <div class="flex w-fit flex-1 flex-col px-[2%] md:flex-row md:px-0">
+                <div class="flex w-fit flex-1 flex-col">
+                    <h5 class="mb-3 font-serif font-semibold">Páginas</h5>
+                    <ul class="pages-list list-none text-xs md:text-sm">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Questionário</a></li>
+                        <li><a href="#">Serviços</a></li>
+                    </ul>
+                </div>
+
+                <div class="mt-3 flex w-fit flex-1 flex-col">
+                    <h5 class="mb-3 font-serif font-semibold">Créditos</h5>
+                    <p class="text-xs">
+                        <a
+                            href="https://br.freepik.com/vetores-gratis/lideranca-e-promocao-de-empregos-projeto-de-sucesso-lancamento-de-startup-desenvolvimento-lider-de-equipe-personagem-plano-do-ceo-mulher-dos-desenhos-animados-sentada-no-foguete_12083074.htm#query=rocket&position=5&from_view=author">Imagem
+                            de vectorjuice
+                        </a> no Freepik
+                    </p>
+                    <p class="text-xs">
+                        <a href="https://br.freepik.com/vetores-gratis/geracao-de-ideia-de-negocio-desenvolvimento-do-plano-homem-pensativo-com-personagem-de-desenho-animado-de-lampada-mentalidade-tecnica-mente-empreendedora-processo-de-brainstorming_11668582.htm#query=doubt&position=1&from_view=author">Imagem de vectorjuice</a> no Freepik
+                    </p>
+
+                    <p class="text-xs">
+                        <a href="https://br.freepik.com/vetores-gratis/dicas-e-ideias-criativas-elemento-de-design-plano-isolado-de-inovacao-empresarial-solucao-de-problemas-conselhos-brainstorming-pensamento-do-personagem-masculino_10780213.htm#query=solution&position=0&from_view=author">Imagem de vectorjuice</a> no Freepik
+                    </p>
+                </div>
             </div>
 
             <div class="flex flex-1 flex-col">
@@ -88,4 +107,5 @@
     <script src="{{ asset('build/assets/ibfe_framework-02bf8553.js') }}"></script>
     <script src="{{ asset('build/assets/master-4ed993c7.js') }}"></script>
 @endproduction
+
 </html>

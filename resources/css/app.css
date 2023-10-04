@@ -137,7 +137,7 @@ body {
 }
 
 .ie-caroussel .ie-item {
-    animation: 0.8s linear ie-slide;
+    animation: 0.8s ease-in-out ie-slide;
     position: relative;
     display: none;
 }
@@ -178,7 +178,7 @@ body {
 }
 
 .ie-card {
-    @apply flex h-fit flex-col rounded-md px-8 py-4 border-slate-300 border w-[75%];
+    @apply flex h-fit flex-col rounded-md px-8 py-4 border-slate-300 border w-full md:w-[75%];
     box-shadow: 2px 4px 12px rgba(20, 28, 30, 0.15);
     transition: all 0.5s;
 }
@@ -202,30 +202,26 @@ body {
 }
 
 .ie-card fieldset label {
-    @apply font-normal text-base text-slate-700 w-full;
+    @apply font-normal text-xs text-slate-700 w-full;
 }
-.ie-card label{
-    display: none;
-}
+
 .ie-card input, .ie-card select {
-    @apply w-full rounded-md border font-light border-slate-300 bg-transparent px-[.35rem] py-[.5rem] text-sm text-slate-900;
-    transition: all 0.3s ease;
+    @apply w-full outline-none rounded-t-sm border-b font-light border-slate-300 bg-transparent px-[.35rem] py-[.5rem] text-sm text-slate-900;
+    transition: color 0.3s ease;
 }
 
 .ie-card option{
-    @apply text-slate-800;
+    @apply text-slate-900 text-xs font-sans;
 }
 
 .ie-card input:focus:hover,
 .ie-card input:focus,
 .ie-card select:focus:hover,
 .ie-card select:focus {
-    outline: 1px solid theme("colors.sky.500");
     border-color: theme("colors.sky.500");
 }
 
 .ie-card input:hover {
-    outline: 1px solid theme("colors.sky.500");
     border-color: theme("colors.sky.500");
 }
 .ie-card .detail {
@@ -241,7 +237,7 @@ body {
 }
 
 .ie-card .google-login {
-    @apply flex flex-row items-center justify-center rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-500 transition-all;
+    @apply flex flex-row items-center justify-center rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-500 transition-colors;
     box-shadow: 1px 2px 3px rgba(20, 28, 30, 0.15);
 }
 
@@ -261,7 +257,7 @@ body {
 
 /* Estilos gerais para o contêiner */
 .ibfe-ver .ie-item {
-    @apply my-[1rem] w-[29%] flex-col items-center rounded-xl border bg-white px-4 py-2 text-center shadow-lg hidden;
+    @apply my-[1rem] w-[75%] md:w-[55%] lg:w-[40%] flex-col items-center rounded-xl border bg-white md:px-8 px-2 py-6 text-center shadow-lg hidden;
 }
 
 /* Estilos para o título */
