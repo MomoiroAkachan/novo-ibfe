@@ -34,24 +34,15 @@
     <div class="text-content flex w-full flex-col text-justify text-sm md:text-lg">
         <h1 class="mb-[1.5rem] text-2xl font-bold uppercase italic text-slate-700 dark:text-slate-600 md:mb-4 md:text-3xl lg:text-[4rem]">Sobre Nós</h1>
         <div class="flex w-full flex-row">
-            <div class="md:w-[50%] lg:block hidden">
+            <div class="hidden md:w-[50%] lg:block">
                 <img alt="" src="{{ asset('assets/img/nave.svg') }}">
             </div>
             <div class="text-sm lg:w-[50%]">
                 <div class="text-justify text-slate-900">
                     <p>
-                        O IBFE-W é uma plataforma gratuita que identifica o perfil empreendedor e intraempreendedor ao mapear fatores que impulsionam ou inibem atividades empresariais.
-                    </p>
-                    <p>
-                        Idealizado pelo Grupo de Pesquisa "Práticas da Administração Eupsíquica, Bases do Comportamento Organizacional e Medidas Psicométricas", liderado pelo Prof. Gustavo Henrique Silva de Souza do IFNMG - Campus Teófilo Otoni, esta
-                        ferramenta tem amplas aplicações, como auxiliar na concessão de empréstimos para novos negócios, treinamentos, seleção de gestores, identificação de perfil empreendedor entre funcionários, incentivo ao intraempreendedorismo, orientação
-                        de carreiras empresariais e análises entre diversas profissões, incluindo aquelas que têm potencial para iniciar empreendimentos, como advogados, médicos, engenheiros, arquitetos, farmacêuticos e contadores.
-                    </p>
-                    <p>
+                        Idealizado pelo Grupo de Pesquisa "Práticas da Administração Eupsíquica, Bases do Comportamento Organizacional e Medidas Psicométricas", liderado pelo Prof. Gustavo Henrique Silva de Souza do IFNMG - Campus Teófilo Otoni, o IBFE-W é
+                        uma plataforma gratuita que identifica o perfil empreendedor e intraempreendedor ao mapear fatores que impulsionam ou inibem atividades empresariais.
                         Seja você um empreendedor, gestor, pesquisador ou aluno, o IBFE-W oferece insights valiosos para impulsionar o empreendedorismo.
-                    </p>
-
-                    <p>
                         Comece agora a explorar o seu potencial empreendedor!
                     </p>
 
@@ -97,8 +88,8 @@
         <div class="flex h-fit w-full flex-col justify-between">
             <div class="my-[.5rem] flex w-full flex-col rounded-xl bg-[#fffe] p-4 text-start dark:bg-slate-600 dark:text-slate-200 lg:mx-2">
                 <div class="mb-1 flex flex-row lg:mb-3">
-                    <div class="w-[3rem] h-[3rem] rounded-full border overflow-hidden">
-                        <img src="{{ asset('assets/img/Nilton-Lima.jpg') }}" alt="Professor Nilton Lima">
+                    <div class="h-[3rem] w-[3rem] overflow-hidden rounded-full border">
+                        <img alt="Professor Nilton Lima" src="{{ asset('assets/img/Nilton-Lima.jpg') }}">
                     </div>
                     <div class="ml-2 flex flex-col">
                         <h2 class="text-md font-serif font-semibold lg:text-lg">
@@ -115,8 +106,8 @@
             </div>
             <div class="my-[.5rem] flex w-full flex-col rounded-xl bg-[#fffe] p-4 text-start dark:bg-slate-600 dark:text-slate-200 lg:mx-2">
                 <div class="mb-1 flex flex-row lg:mb-3">
-                    <div class="w-[3rem] h-[3rem] rounded-full border overflow-hidden">
-                        <img src="{{ asset('assets/img/Jorge-Coelho.png') }}" alt="Professor Arthur Jorge Coelho">
+                    <div class="h-[3rem] w-[3rem] overflow-hidden rounded-full border">
+                        <img alt="Professor Arthur Jorge Coelho" src="{{ asset('assets/img/Jorge-Coelho.png') }}">
                     </div>
                     <div class="ml-2 flex flex-col">
                         <h2 class="text-md font-serif font-semibold lg:text-lg">
@@ -133,8 +124,8 @@
             </div>
             <div class="my-[.5rem] flex w-full flex-col rounded-xl bg-[#fffe] p-4 text-start dark:bg-slate-600 dark:text-slate-200 lg:mx-2">
                 <div class="mb-1 flex flex-row lg:mb-3">
-                    <div class="w-[3rem] rounded-full border overflow-hidden">
-                        <img src="{{ asset('assets/img/Chams-Kumaira.jpeg') }}" alt="Professora Chams Kumaira">
+                    <div class="w-[3rem] overflow-hidden rounded-full border">
+                        <img alt="Professora Chams Kumaira" src="{{ asset('assets/img/Chams-Kumaira.jpeg') }}">
                     </div>
                     <div class="ml-2 flex flex-col">
                         <h2 class="text-md font-serif font-semibold lg:text-lg">

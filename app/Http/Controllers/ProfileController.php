@@ -9,27 +9,28 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        if (session()->get('nome')) {
+        if(isset(session()->get('sessionExtraInfo')['sessionActived']))
+        {
             return redirect()->route('survey.index');
-        } else {
+        }
+        else
+        {
             return view('profile.index');
         }
     }
 
     public function store(ProfileRequest $request)
     {
-        if ($request->validated()) {
-            $request->session()->put('nome', $request->input('nome'));
-            $request->session()->put('cidade', $request->input('cidade'));
-            $request->session()->put('email', $request->input('email'));
-            $request->session()->put('telefone', $request->input('telefone'));
-            $request->session()->put('sexo', $request->input('sexo'));
-            $request->session()->put('bdata', $request->input('bdata'));
-            $request->session()->put('religiao', $request->input('religiao'));
-            $request->session()->put('escolaridade', $request->input('escolaridade'));
-            $request->session()->put('trabalho', $request->input('trabalho'));
-            $request->session()->put('classe', $request->input('classe'));
-            return redirect(route('survey.index'));
+        if (!$request->validated()) {
+            throw('data.validation.error');
         }
+
+        $sessionData = [
+            'sessionExtraInfo' => ['sessionActived' => true],
+            'userInfo' => $request->all(),
+            'surveyInfo' => [],
+        ];
+        session()->put($sessionData);
+        return redirect(route('survey.index'));
     }
 }

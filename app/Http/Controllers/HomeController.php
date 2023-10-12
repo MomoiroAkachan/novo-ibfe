@@ -19,15 +19,7 @@ class HomeController extends Controller
 
     public function test()
     {
-        $cSession = session();
-
-        if(!$cSession->get('name'))
-        {
-            return redirect()->to(route('profile.index'));
-        }
-        else{
-            return redirect()->to(route('survey.index'));
-        }
+        return redirect()->to(route('profile.index'));
     }
     
     public function about()

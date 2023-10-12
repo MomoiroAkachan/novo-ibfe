@@ -5,139 +5,115 @@ namespace App\Http\Controllers;
 use App\Models\Question;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use PHPUnit\TestRunner\TestResult\Collector;
 
-class SurveyController extends Controller
+class hSurveyData
 {
-    public $v_roles = null;
-    public $v_result = null;
-    public $v_descriptions = null;
+    private $m_roles = null;
+    private $m_set = null;
+    private $m_desc = null;
 
     function __construct()
     {
-        $this->v_roles = new Collection(
-            [
-                'Disposição aos Negócios' => [3, 14, 31, 34, 39],
-                'Disposição aos Riscos' => [5, 10, 15, 19, 25],
-                'Acesso a Capital' => [11, 18, 21, 24, 25],
-                'Senso de Inovação e Criatividade' => [2, 6, 17, 23, 36],
-                'Senso de Oportunidade' => [12, 20, 26, 29, 37],
-                'Capacidade de Gerenciamento e Liderança' => [4, 9, 13, 22, 28],
-                'Rede de Relacionamentos' => [7, 16, 30, 33, 40],
-                'Paixão Pelo Trabalho' => [1, 8, 27, 32, 38],
-                'Resultado Geral' => '0'
-            ]
-        );
-        $this->v_result = new Collection();
-
-        $this->v_descriptions = [
-            [
-                'Indivíduo com forte disposição pessoal aos negócios',
-                'Indivíduo com disposição pessoal moderada aos negócios',
-                'Indivíduo sem disposições pessoais aos negócios'
-            ],
-            [
-                'Indivíduo com alta disposição a riscos empresariais',
-                'Indivíduo com moderada disposição a riscos empresariais',
-                'Indivíduo com baixa disposição a riscos empresariais'
-            ],
-            [
-                'Indivíduo capaz de conseguir/obter capital (dinheiro/recursos) com muita facilidade',
-                'Indivíduo capaz de conseguir/obter capital (dinheiro/recursos) com pouca facilidade',
-                'Indivíduo incapaz de conseguir/obter capital (dinheiro/recursos)'
-            ],
-            [
-                'Indivíduo muito criativo, com alto senso de inovação.',
-                'Indivíduo criativo, com interesses moderados em inovações.',
-                'Indivíduo com pouca criatividade, sem interesse por inovações.'
-            ],
-            [
-                'Indivíduo tem habilidade para identificar e valorar as oportunidades do mercado',
-                'Indivíduo costuma reconhecer algumas oportunidades do mercado',
-                'Indivíduo não tem habilidade para identificar e valorar oportunidades do mercado'
-            ],
-            [
-                'Indivíduo com alta capacidade de Gerenciamento e Liderança.',
-                'Indivíduo com capacidades medianas de gerenciamento e liderança.',
-                'Indivíduo com baixa capacidade de gerenciamento e liderança.'
-            ],
-            [
-                'Indivíduo apresenta facilidade com relacionamentos e possui uma boa rede de contatos',
-                'Indivíduo apresenta alguma facilidade com relacionamentos e possui uma rede de contatos mediana',
-                'Indivíduo não apresenta facilidade com relacionamentos e não possui uma boa rede de contatos'
-            ],
-            [
-                'Indivíduo apaixonado/obstinado pelo trabalho que faz',
-                'Indivíduo tende a gostar do trabalho que faz',
-                'Indivíduo, provavelmente, não gosta do trabalho que faz'
-            ],
-            [
-                'Indivíduo apresenta perfil intraempreendedor',
-                'Indivíduo apresenta perfil intraempreendedor moderado (precisa ser estimulado)',
-                'Indivíduo não apresenta perfil intraempreendedor'
-            ],
-
+        $this->m_roles = [
+            'Disposição aos Negócios',
+            'Disposição aos Riscos',
+            'Acesso a Capital',
+            'Senso de Inovação e Criatividade',
+            'Senso de Oportunidade',
+            'Capacidade de Gerenciamento e Liderança',
+            'Rede de Relacionamentos',
+            'Paixão Pelo Trabalho',
+            'Resultado Geral'
         ];
+        $this->m_set = [
+            [3, 14, 31, 34, 39],
+            [5, 10, 15, 19, 25],
+            [11, 18, 21, 24, 25],
+            [2, 6, 17, 23, 36],
+            [12, 20, 26, 29, 37],
+            [4, 9, 13, 22, 28],
+            [7, 16, 30, 33, 40],
+            [1, 8, 27, 32, 38],
+            40
+        ];
+        $this->m_desc = [
+            ['Forte Disposição', 'Moderada Disposição', 'Sem Disposição'],
+            ['Alta Disposição', 'Moderada Disposição', 'Baixa Disposição'],
+            ['Fácil Acesso', 'Acesso Moderado', 'Difícil Acesso'],
+            ['Alta Criatividade', 'Criatividade Moderada', 'Baixa Criatividade'],
+            ['Alta Habilidade', 'Habilidade Moderada', 'Baixa Habilidade'],
+            ['Alta Capacidade', 'Capacidade Moderada', 'Baixa Capacidade'],
+            ['Boa Rede de Contatos', 'Rede de Contatos Mediana', 'Rede de Contatos Fraca'],
+            ['Apaixonado Pelo Trabalho', 'Gosta do Trabalho', 'Não Gosta do Trabalho'],
+            ['Intraempreendedor', 'Intraempreendedor Moderado', 'Não Intraempreendedor']
+        ];
+    }
+
+    public function getMedia(array $data)
+    {
+        $result = new Collection();
+
+        foreach ($this->m_set as $key => $set) {
+            $buffer = 0;
+            $info = '';
+            $b1 = new Collection($set);
+
+            if ($set == 40) {
+                foreach ($data as $item) {
+                    $buffer += $data[$item];
+                }
+                $buffer /= 40;
+            } else {
+                foreach ($set as $item) {
+                    $buffer += $data[$item];
+                }
+                $buffer /= $b1->count();
+            }
+
+
+
+            if ($buffer >= 4 && $buffer <= 5) {
+                $info = $this->m_desc[$key][0];
+            } elseif ($buffer >= 3 && $buffer <= 3.9) {
+                $info = $this->m_desc[$key][1];
+            } else {
+                $info = $this->m_desc[$key][2];
+            }
+
+            $result->push([$this->m_roles[$key], $buffer, $info]);
+        }
+        return $result;
+    }
+}
+
+class SurveyController extends Controller
+{
+    public $m_surveyData = [];
+
+    public function __construct()
+    {
+        $this->m_surveyData = new hSurveyData();
     }
 
     public function store(Request $request)
     {
-        $it = 0;
-        foreach ($this->v_roles as $k => $i) {
-            $buffer = 0;
-            $calc = 0;
-            $res = 0;
-            $obj = [];
-
-            if ($i == '0') {
-                foreach ($request->all() as $v) {
-                    $buffer += floatval($v);
-                }
-                $calc = floatval($buffer / 40);
-            } else {
-                foreach ($i as $v) {
-                    $buffer += $request->input('q_' . $v);
-                }
-                $calc = floatval($buffer / 5);
-            }
-
-            if ($calc >= 4 && $calc <= 5) {
-                $res = $this->v_descriptions[$it][0];
-            } elseif ($calc >= 3 && $calc <= 3.9) {
-                $res = $this->v_descriptions[$it][1];
-            } else {
-                $res = $this->v_descriptions[$it][2];
-            }
-
-            $obj = ['title' => $k, 'value' => $calc, 'means' => $res];
-
-            $this->v_result->push($obj);
-
-            $it++;
-        }
-        session()->put('user_result', $this->v_result);
+        $raw = new Collection($request->all());
+        $data = $raw->values()->forget(0);
+        session()->put('surveyInfo', $this->m_surveyData->getMedia($data->toArray()));
         return redirect()->route('survey.show.result');
     }
 
     public function showResult()
     {
-        if (session()->get('nome')) {
-            return view('survey.result')->with('result', session()->get('user_result'));
-        }
-        else
-        {
-            return redirect()->route('test');
-        }
+        return view('survey.result')->with('result', session()->get('surveyInfo'));
     }
 
     public function index(Request $r)
     {
-        if (!session()->get('nome')) {
-            return redirect()->route('profile.index');
-        } else {
-            $questions = Question::all();
-            return view('survey.index', [
-                'quest' => $questions
-            ]);
-        }
+        $questions = Question::all();
+        return view('survey.index', [
+            'quest' => $questions
+        ]);
     }
 }

@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -23,24 +24,15 @@
 
 html,
 body {
-    overflow-y: scroll;
-    scrollbar-width: none;
-}
-
-body::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
-
-html,
-body {
     border: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     scroll-behavior: smooth;
 }
-
+.banner h1 {
+    font-family: "Abril Fatface";
+}
 /* Classe 'invisivel' */
 .ie-inv {
     opacity: 0;
@@ -101,31 +93,6 @@ body {
     background-color: theme("colors.sky.400");
 }
 
-#ie-navbar-links-list li {
-    margin: 0 0.5rem;
-    display: flex;
-    align-items: center;
-}
-
-#ie-navbar-links-list li a {
-    transition: color 0.2s linear;
-    text-transform: capitalize;
-    font-size: medium;
-    font-family: "Jost";
-}
-
-.ie-navbar-route-indicator-selected {
-    transition: all 0.3 ease;
-    background-color: theme("colors.emerald.400");
-    animation: 0.3s linear 0s 1 ie-nav-appear;
-    animation-fill-mode: forwards;
-}
-
-.ie-navbar-route-indicator-unselected {
-    transition: all 0.3 ease;
-    width: 0;
-}
-
 #ie-blur-screen {
     animation: 0.3s linear 0s 1 ie-fadein;
     animation-fill-mode: forwards;
@@ -178,9 +145,8 @@ body {
 }
 
 .ie-card {
-    @apply flex h-fit flex-col rounded-md px-8 py-4 border-slate-300 border w-full md:w-[75%];
+    @apply flex h-fit flex-col rounded-md px-8 py-4 border-slate-300 border w-full;
     box-shadow: 2px 4px 12px rgba(20, 28, 30, 0.15);
-    transition: all 0.5s;
 }
 
 .ie-card:focus {
@@ -198,6 +164,42 @@ body {
 }
 
 .ie-card fieldset {
+    @apply relative my-[1.5rem] flex w-full flex-col justify-center border-b border-b-slate-500;
+}
+
+.ie-card fieldset .inputline {
+    @apply flex flex-row items-center;
+}
+.ie-card fieldset .inputline img {
+    @apply h-[1.5rem] select-none;
+}
+
+.ie-card fieldset label {
+    @apply absolute z-0 ml-[2rem] select-none text-[.7rem] text-slate-400 transition-transform;
+}
+
+.ie-card fieldset .inputline input,
+.ie-card fieldset .inputline select {
+    @apply relative z-10 ml-1 flex w-full border-b bg-transparent py-[.25rem] outline-none;
+}
+
+.ie-card fieldset input:focus ~ label,
+.ie-card fieldset input:valid ~ label,
+.ie-card fieldset select:focus ~ label,
+.ie-card fieldset select:valid ~ label {
+    transform: translateY(-1.5rem);
+    transition: all 0.3s ease-in-out;
+    @apply font-semibold text-slate-950;
+}
+.ie-card input[type="date"] {
+    @apply select-none text-transparent;
+}
+
+.ie-card input[type="date"]:valid {
+    @apply select-auto text-black;
+}
+/* 
+.ie-card fieldset {
     @apply my-3 flex h-fit w-full flex-col text-sm;
 }
 
@@ -205,12 +207,13 @@ body {
     @apply font-normal text-xs text-slate-700 w-full;
 }
 
-.ie-card input, .ie-card select {
+.ie-card input,
+.ie-card select {
     @apply w-full outline-none rounded-t-sm border-b font-light border-slate-300 bg-transparent px-[.35rem] py-[.5rem] text-sm text-slate-900;
     transition: color 0.3s ease;
 }
 
-.ie-card option{
+.ie-card option {
     @apply text-slate-900 text-xs font-sans;
 }
 
@@ -234,7 +237,7 @@ body {
 
 .ie-card .detail span {
     @apply mx-2;
-}
+} */
 
 .ie-card .google-login {
     @apply flex flex-row items-center justify-center rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-500 transition-colors;
