@@ -282,3 +282,7 @@ body {
 .ibfe-ver .material-icons {
     @apply text-sm;
 }
+
+footer p, footer p a, footer a{
+    @apply font-light;
+}
