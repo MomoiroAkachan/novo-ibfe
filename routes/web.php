@@ -14,12 +14,14 @@ Route::controller(HomeController::class)->group(function(){
     Route::get('test', 'test')->name('test')->middleware('user.acess');
 });
 
+// Rotas relativas ao questionário
 Route::controller(SurveyController::class)->group(function(){
     Route::get('survey', 'index')->name('survey.index')->middleware('user.acess');
     Route::post('survey', 'store')->name('survey.store')->middleware('user.acess');
     Route::get('survey/result', 'showResult')->name('survey.show.result')->middleware('user.acess');
 });
 
+// Rotas relativas ao perfil
 Route::controller(ProfileController::class)->group(function(){
     Route::get('profile', 'index')->name('profile.index');
     Route::post('profile', 'store')->name('profile.store');

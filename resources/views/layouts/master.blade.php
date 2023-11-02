@@ -5,18 +5,21 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
+
     <title>@yield('title') / {{ Str::upper(config('app.name')) }}</title>
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
 
-    @production
-        <link href="{{ assets('build/assets/app-e78d9c93.css') }}" rel="stylesheet">
-        <link href="{{ assets('build/assets/ie-framework-b9e58ad2.css') }}" rel="stylesheet">
+    @if (config('app.env') == 'production')
+        <link href="{{ asset('build/assets/home-e00103cd.css') }}" rel="stylesheet">
+        <link href="{{ asset('build/assets/ie-framework-1e241295.css') }}" rel="stylesheet">
     @else
         @vite(['resources/css/ie-framework.css', 'resources/js/ibfe_framework.js'])
-    @endproduction
+    @endif
 
     @yield('head')
+
 </head>
 
 <body class="dark:bg-slate-800 dark:text-slate-300">
@@ -107,10 +110,8 @@
     </div>
 </body>
 
-@production
-    <script src="{{ asset('build/assets/app-9795af21.js') }}"></script>
-    <script src="{{ asset('build/assets/ibfe_framework-02bf8553.js') }}"></script>
-    <script src="{{ asset('build/assets/master-4ed993c7.js') }}"></script>
-@endproduction
-
+@if (config('app.env') == 'production')
+    <script src="{{ asset('build/assets/ibfe_framework-0d84ccda.js') }}"></script>
+@endif
+<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </html>

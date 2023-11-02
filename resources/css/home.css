@@ -1,0 +1,5 @@
+@import 'app.css';
+
+.text-content div p{
+    @apply text-slate-800 text-[1rem] font-serif mb-8 last:mb-0;
+}

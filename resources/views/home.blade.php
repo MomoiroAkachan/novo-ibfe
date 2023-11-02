@@ -2,6 +2,13 @@
 
 @section('title', 'Home')
 
+@section('head')
+    @if (config('app.env') == 'production')
+    @else
+        @vite('resources/css/home.css')
+    @endif
+@endsection
+
 @section('pre-content')
     <div
         class="fle-col flex h-fit w-full items-center justify-center rounded-bl-[8rem] bg-slate-100 px-[1rem] pb-[1rem] pt-[4rem] shadow-sm shadow-slate-500 dark:bg-inherit dark:text-inherit md:flex-row md:px-[18%] md:text-xl lg:rounded-bl-[17rem] lg:pb-[0rem] lg:pr-0 lg:pt-[1rem]"id="home-banner-content">
@@ -32,21 +39,24 @@
     <div class="spacer h-[3rem] w-full md:h-[7rem]"></div>
 
     <div class="text-content flex w-full flex-col text-justify text-sm md:text-lg">
-        <h1 class="mb-[1.5rem] text-2xl font-bold uppercase italic text-slate-700 dark:text-slate-600 md:mb-4 md:text-3xl lg:text-[4rem]">Sobre Nós</h1>
+        <h1 class="mb-[1.5rem] text-2xl font-bold uppercase italic text-slate-700 md:mb-4 md:text-3xl lg:text-[4rem]">Sobre Nós</h1>
         <div class="flex w-full flex-row">
             <div class="hidden md:w-[50%] lg:block">
                 <img alt="" src="{{ asset('assets/img/nave.svg') }}">
             </div>
             <div class="text-sm lg:w-[50%]">
-                <div class="text-justify text-slate-900">
-                    <p>
-                        Idealizado pelo Grupo de Pesquisa "Práticas da Administração Eupsíquica, Bases do Comportamento Organizacional e Medidas Psicométricas", liderado pelo Prof. Gustavo Henrique Silva de Souza do IFNMG - Campus Teófilo Otoni, o IBFE-W é
-                        uma plataforma gratuita que identifica o perfil empreendedor e intraempreendedor ao mapear fatores que impulsionam ou inibem atividades empresariais.
-                        Seja você um empreendedor, gestor, pesquisador ou aluno, o IBFE-W oferece insights valiosos para impulsionar o empreendedorismo.
-                        Comece agora a explorar o seu potencial empreendedor!
-                    </p>
-
-                </div>
+                <p>
+                    <span class="material-icons text-base text-slate-500">arrow_forward</span>Idealizado pelo Grupo de Pesquisa "Práticas da Administração Eupsíquica, Bases do Comportamento Organizacional e Medidas Psicométricas", liderado pelo Prof. Gustavo
+                    Henrique Silva de Souza do IFNMG - Campus Teófilo Otoni, o IBFE-W é
+                    uma plataforma gratuita que identifica o perfil empreendedor e intraempreendedor ao mapear fatores que impulsionam ou inibem atividades empresariais.
+                </p>
+                <p>
+                    <span class="material-icons text-base text-slate-500">arrow_forward</span>Seja você um empreendedor, gestor, pesquisador ou aluno, o IBFE-W oferece insights valiosos para impulsionar o empreendedorismo.
+                </p>
+                <p>
+                    <span class="material-icons text-base text-slate-500">arrow_forward</span>Comece agora a explorar o seu potencial empreendedor!
+                </p>
+                {{-- <dotlottie-player src="https://lottie.host/91fda939-d633-4884-a865-b8646bdaec91/L4dkTLMNd1.json" background="transparent" speed=".5" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player> --}}
             </div>
         </div>
     </div>

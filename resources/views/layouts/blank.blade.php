@@ -13,10 +13,10 @@
 </head>
 
 <body class="dark:bg-slate-800 dark:text-slate-300">
-    <div class="w-full h-full" id="ie-theme-config">
+    <div class="h-full w-full" id="ie-theme-config">
         {{-- Conteúdo --}}
         @yield('content')
     </div>
 </body>
-
+<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </html>
