@@ -1,7 +1,9 @@
-@extends('layouts.bar-master')
+@php
+    $ie_fixed_navbar=false;
+@endphp
 
+@extends('layouts.master')
 @section('title', 'Questionário')
-
 @section('content')
     <div class="flex flex-col">
         <p class="my-4">

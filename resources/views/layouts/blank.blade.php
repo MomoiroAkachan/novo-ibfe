@@ -7,7 +7,7 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>@yield('title') / {{ Str::upper(config('app.name')) }}</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    @vite(['resources/css/app.css', 'resources/js/ibfe_framework.js'])
+    @vite(['resources/css/app.css', 'resources/js/ie-framework.js'])
 
     @yield('head')
 </head>

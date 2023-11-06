@@ -1,0 +1,39 @@
+@import 'base';
+
+.ie-navbar {
+    @apply top-0 left-0 w-full shadow-md flex-row bg-slate-100 px-[1rem] md:items-center lg:px-[1.5rem];
+    z-index: 100;
+
+    .brand {
+        @apply h-fit w-fit items-center;
+    }
+
+    .menu {
+        @apply mx-[1.5rem] mb-[1rem] mt-[0.5rem] flex flex-row flex-nowrap lg:mt-2;
+
+        ul {
+            @apply flex h-fit w-full list-none flex-row flex-nowrap justify-between;
+
+            li {
+                @apply mx-[0.5rem] flex items-center flex-col;
+
+                a {
+                    @apply transition-colors capitalize text-[medium] font-['Jost'] text-slate-900 hover:text-sky-600 dark:text-inherit hover:dark:text-emerald-400;
+                }
+            }
+        }
+    }
+
+    .route-indicator-selected {
+        @apply bg-emerald-400 transition-all;
+        transition: all 0.3s ease;
+
+        animation: 0.3s linear 0s 1 ie-nav-appear;
+        animation-fill-mode: forwards;
+    }
+
+    .route-indicator-unselected {
+        transition: all 0.3s ease;
+        width: 0;
+    }
+}

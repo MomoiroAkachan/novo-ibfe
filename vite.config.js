@@ -7,7 +7,7 @@ export default defineConfig({
             input: [
                 'resources/css/home.css',
                 'resources/css/ie-framework.css',
-                'resources/js/ibfe_framework.js'
+                'resources/js/ie-framework.js'
             ],
             refresh: true,
         }),

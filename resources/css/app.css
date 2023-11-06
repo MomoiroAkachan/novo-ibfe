@@ -8,31 +8,15 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --back-z: 0;
-    --obj-z: 5;
-    --hud-z: 10;
-    --hud-1: 15;
-    --dark-bg: theme("colors.slate.800");
-    --dark-fg: theme("colors.slate.100");
-}
-
 * {
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-weight: normal;
 }
 
-html,
-body {
-    border: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    scroll-behavior: smooth;
-}
 .banner h1 {
-    font-family: "Abril Fatface";
+    font-family: "Abril Fatface", serif;
 }
+
 /* Classe 'invisivel' */
 .ie-inv {
     opacity: 0;
@@ -198,46 +182,6 @@ body {
 .ie-card input[type="date"]:valid {
     @apply select-auto text-black;
 }
-/* 
-.ie-card fieldset {
-    @apply my-3 flex h-fit w-full flex-col text-sm;
-}
-
-.ie-card fieldset label {
-    @apply font-normal text-xs text-slate-700 w-full;
-}
-
-.ie-card input,
-.ie-card select {
-    @apply w-full outline-none rounded-t-sm border-b font-light border-slate-300 bg-transparent px-[.35rem] py-[.5rem] text-sm text-slate-900;
-    transition: color 0.3s ease;
-}
-
-.ie-card option {
-    @apply text-slate-900 text-xs font-sans;
-}
-
-.ie-card input:focus:hover,
-.ie-card input:focus,
-.ie-card select:focus:hover,
-.ie-card select:focus {
-    border-color: theme("colors.sky.500");
-}
-
-.ie-card input:hover {
-    border-color: theme("colors.sky.500");
-}
-.ie-card .detail {
-    @apply my-4 flex w-full flex-row items-center;
-    font-size: 0.6rem;
-}
-.ie-card .detail hr {
-    @apply flex-grow;
-}
-
-.ie-card .detail span {
-    @apply mx-2;
-} */
 
 .ie-card .google-login {
     @apply flex flex-row items-center justify-center rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-500 transition-colors;
@@ -283,6 +227,6 @@ body {
     @apply text-sm;
 }
 
-footer p, footer p a, footer a{
+footer p, footer a{
     @apply font-light;
 }

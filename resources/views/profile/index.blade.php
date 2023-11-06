@@ -1,3 +1,6 @@
+@php
+    $ie_fixed_navbar=false;
+@endphp
 @extends('layouts.master')
 
 @section('title', 'Perfil')
@@ -144,7 +147,7 @@
                             }
                             .test label{
                                 position: absolute;
-                                
+
                             }
                             .test input{
                                 position: absolute;
@@ -154,7 +157,7 @@
                             <input type="text" name="test" id="test">
                             <label for="test">Teste</label>
                         </fieldset>
-                        
+
                         <fieldset class="f-nome">
                             <label for="nome">Nome ou Apelido</label>
                             <input id="nome" name="nome" placeholder="Nome ou Apelido" type="text" value="{{ old('nome') }}">
