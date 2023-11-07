@@ -4,26 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(): View
     {
         return view('home');
     }
 
-    public function services()
+    public function services(): View
     {
         return view('services');
     }
 
-    public function test()
+    public function test(): RedirectResponse
     {
         return redirect()->to(route('profile.index'));
     }
-    
-    public function about()
+
+    public function about(): View
     {
         $ibfe_team = new Collection();
         $ibfe_team->push([

@@ -1,18 +1,17 @@
-@php
-    $ie_show_navbar = true;
-@endphp
 @extends('layouts.master')
 
 @section('title', 'Home')
 
 @section('head')
     @if (config('app.env') == 'production')
+        <link rel="stylesheet" href="{{ asset('build/assets/home-37bed043.css') }}">
     @else
         @vite('resources/scss/home.scss')
     @endif
 @endsection
 
 @section('pre-content')
+    <div class="top-section"></div>
     {{--  Banner da página inicial do IBFE  --}}
     <div class="home-banner">
         <div class="banner-side left">
@@ -23,7 +22,7 @@
                 O ponto de partida para seu sucesso profissional.
             </p>
             <a class="ie-button"
-               href="#">
+               href="{{ route('profile.index') }}">
                 <span>Mapeie Seu Perfil</span>
                 <span class="material-icons ml-2 text-emerald-400">arrow_forward</span>
             </a>
@@ -39,17 +38,15 @@
     <div class="spacer h-[3rem] w-full md:h-[7rem]"></div>
 
     <div class="info-banner text-content ">
-
         <div class="hidden md:flex md:flex-1">
             <img alt="Imagem banner 2 homepage ibfe" src="{{ asset('assets/img/nave.svg') }}">
         </div>
-
         <div class="flex-1 flex flex-col">
             <p class="subtitle text-2xl">
-                Seja você <span class="bg-emerald-200 grif">empreendedor</span>,
-                <span class="bg-emerald-500 grif">gestor</span>,
-                <span class="bg-red-200 grif">pesquisador</span> ou
-                <span class="bg-amber-200 grif">aluno</span>, o IBFE-W oferece insights valiosos
+                Seja você <span class="bg-emerald-200 destak">empreendedor</span>,
+                <span class="bg-emerald-500 destak">gestor</span>,
+                <span class="bg-red-200 destak">pesquisador</span> ou
+                <span class="bg-amber-200 destak">aluno</span>, o IBFE-W oferece insights valiosos
                 para impulsionar o empreendedorismo.
             </p>
             <p class="text-base">
@@ -64,12 +61,11 @@
                 <a href="{{ route('survey.index') }}">Comece agora a explorar o seu potencial empreendedor!</a>
             </p>
         </div>
-
     </div>
 
     <div
-        class="ie-caroussel ibfe-ver my-[3rem] flex h-fit w-full select-none flex-col items-center justify-center md:mb-[5rem] md:my-[5rem] md:text-lg"
-        data-ie-caroussel-switch-time="15000">
+        class="ie-carousel ibfe-ver my-[3rem] flex h-fit w-full select-none flex-col items-center justify-center md:mb-[5rem] md:my-[5rem] md:text-lg"
+        data-ie-carousel-switch-time="15000">
         <div class="ie-item">
             <h4 class="ie-title">Base Teórica</h4>
             <p class="ie-description">Conheça um pouco sobre a fundamentação teórica do IBFE, por meio do livro

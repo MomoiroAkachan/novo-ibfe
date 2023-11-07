@@ -1,1 +1,206 @@
 @import '../css/app.css';
+
+* {
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+}
+
+.banner h1 {
+    font-family: "Abril Fatface", serif;
+}
+
+.ie-inv {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: inherit;
+    flex: inherit;
+    flex-direction: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.ie-dialog {
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem;
+    color: white;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: large;
+    transition: all 0.3s ease;
+}
+
+.ie-dialog * {
+    display: block;
+}
+
+.ie-dialog p {
+    margin: 0 0.5rem;
+}
+
+.ie-dialog .ie-dialog-closure {
+    transition: all 0.3s;
+    padding: 0.25rem;
+    border-radius: 0.2rem;
+}
+
+.ie-dialog .ie-dialog-closure img {
+    width: 1rem;
+}
+
+.ie-dialog .ie-dialog-closure:hover {
+    outline: 1px solid black;
+    background-color: #fdc4;
+}
+
+.ie-dialog-alert {
+    background-color: theme("colors.red.400");
+}
+
+.ie-dialog-warning {
+    background-color: theme("colors.orange.400");
+}
+
+.ie-dialog-message {
+    background-color: theme("colors.sky.400");
+}
+
+#ie-blur-screen {
+    animation: 0.3s linear 0s 1 ie-fadein;
+    animation-fill-mode: forwards;
+}
+
+@keyframes ie-nav-appear {
+    from {
+        width: 0;
+    }
+    to {
+        width: 85%;
+    }
+}
+
+@keyframes ie-fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes ie-slide {
+    from {
+        transform: translate(-100%);
+        opacity: 0;
+        display: none;
+    }
+    to {
+        transform: translate(0);
+        opacity: 1;
+        display: flex;
+    }
+}
+
+.ie-card {
+    @apply flex h-fit flex-col rounded-md px-8 py-4 border-slate-300 border w-full;
+    box-shadow: 2px 4px 12px rgba(20, 28, 30, 0.15);
+}
+
+.ie-card:focus {
+    @apply border border-sky-600;
+}
+
+.ie-card .head .title {
+    @apply text-center font-bold text-slate-800;
+    font-size: 2rem;
+}
+
+.ie-card .head .subtitle {
+    @apply w-[55%] text-left;
+    font-size: 0.7rem;
+}
+
+.ie-card fieldset {
+    @apply relative my-[1.5rem] flex w-full flex-col justify-center border-b border-b-slate-500;
+}
+
+.ie-card fieldset .inputline {
+    @apply flex flex-row items-center;
+}
+
+.ie-card fieldset .inputline img {
+    @apply h-[1.5rem] select-none;
+}
+
+.ie-card fieldset label {
+    @apply absolute z-0 ml-[2rem] select-none text-[.7rem] text-slate-400 transition-transform;
+}
+
+.ie-card fieldset .inputline input,
+.ie-card fieldset .inputline select {
+    @apply relative z-10 ml-1 flex w-full border-b bg-transparent py-[.25rem] outline-none;
+}
+
+.ie-card fieldset input:focus ~ label,
+.ie-card fieldset input:valid ~ label,
+.ie-card fieldset select:focus ~ label,
+.ie-card fieldset select:valid ~ label {
+    transform: translateY(-1.5rem);
+    transition: all 0.3s ease-in-out;
+    @apply font-semibold text-slate-950;
+}
+
+.ie-card input[type="date"] {
+    @apply select-none text-transparent;
+}
+
+.ie-card input[type="date"]:valid {
+    @apply select-auto text-black;
+}
+
+.ie-card .google-login {
+    @apply flex flex-row items-center justify-center rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-500 transition-colors;
+    box-shadow: 1px 2px 3px rgba(20, 28, 30, 0.15);
+}
+
+.ie-card .google-login:hover {
+    box-shadow: 2px 3px 3px rgba(20, 28, 30, 0.15);
+}
+
+.ie-card .google-login img {
+    width: 1rem;
+    margin-right: 0.5rem;
+}
+
+.ie-carousel {
+    &.ibfe-ver .ie-item {
+        @apply my-[1rem] w-[75%] md:w-[55%] lg:w-[40%] flex-col items-center rounded-xl border bg-white md:px-8 px-2 py-6 text-center shadow-lg hidden;
+    }
+
+    &.ibfe-ver .ie-title {
+        @apply mb-4 font-serif text-base font-bold uppercase md:text-2xl lg:text-2xl;
+    }
+
+    &.ibfe-ver .ie-description {
+        @apply mb-2 text-sm md:text-base;
+    }
+
+
+    &.ibfe-ver .ie-link {
+        @apply flex h-fit w-full flex-row flex-nowrap items-center justify-center p-0 text-xs transition-colors hover:text-sky-700 dark:hover:text-emerald-400;
+    }
+
+    &.ibfe-ver .material-icons {
+        @apply text-sm;
+    }
+}
+
+footer {
+    p, a {
+        @apply font-light;
+    }
+}

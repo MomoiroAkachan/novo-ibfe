@@ -37,3 +37,18 @@
         width: 0;
     }
 }
+
+.ie-carousel {
+    overflow: hidden;
+    position: relative;
+    .ie-item {
+        animation: 0.8s ease-in-out ie-slide;
+        position: relative;
+        &:not(.active) {
+            display: none;
+        }
+        &.active {
+            display: flex;
+        }
+    }
+}

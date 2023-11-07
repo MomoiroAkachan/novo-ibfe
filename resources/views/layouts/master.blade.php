@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo.svg') }}" type="image/x-icon">
 
     <title>@yield('title') / {{ Str::upper(config('app.name')) }}</title>
 
@@ -11,10 +12,9 @@
     <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
 
     @if (config('app.env') == 'production')
-        <link href="{{ asset('build/assets/home-e00103cd.css') }}" rel="stylesheet">
-        <link href="{{ asset('build/assets/ie-framework-1e241295.css') }}" rel="stylesheet">
+{{--        <link rel="stylesheet" href="{{ asset('build/assets/home-37bed043.css') }}">--}}
     @else
-        @vite(['resources/scss/master.scss', 'resources/js/ie-framework.js'])
+        @vite(['resources/scss/master.scss', 'resources/js/ie-fwk.js'])
     @endif
 
     @php

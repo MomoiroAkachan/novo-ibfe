@@ -71,8 +71,6 @@ class hSurveyData
                 $buffer /= $b1->count();
             }
 
-
-
             if ($buffer >= 4 && $buffer <= 5) {
                 $info = $this->m_desc[$key][0];
             } elseif ($buffer >= 3 && $buffer <= 3.9) {

@@ -5,9 +5,12 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/css/home.css',
-                'resources/css/ie-framework.css',
-                'resources/js/ie-framework.js'
+                'resources/scss/home.scss',
+                'resources/scss/about.scss',
+                'resources/scss/services.scss',
+                'resources/scss/profile.scss',
+                'resources/scss/survey.scss',
+                'resources/js/ie-fwk.js'
             ],
             refresh: true,
         }),

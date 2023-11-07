@@ -1,17 +1,13 @@
 @import "master";
 
-.info-banner {
-    div p:not(.subtitle) {
-        @apply text-slate-800 font-serif mb-5 last:mb-0;
-    }
-
-    p.subtitle {
-        @apply text-slate-600 font-medium font-sans mb-8 last:mb-0;
-    }
+html{
+    scroll-snap-type: y mandatory;
 }
 
 .home-banner {
     @apply flex-col flex h-fit w-full items-center justify-center rounded-bl-[8rem] bg-slate-100 px-[1rem] pb-[1rem] pt-[4rem] shadow-sm shadow-slate-500 dark:bg-inherit dark:text-inherit md:flex-row md:px-[18%] md:text-xl lg:rounded-bl-[17rem] lg:pb-[0rem] lg:pr-0 lg:pt-[1rem];
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
 
     .banner-side {
         @apply flex flex-col text-center flex-1;
@@ -35,25 +31,44 @@
         font-family: 'Jost', sans-serif;
     }
 
-    .subtitle {
-        .grif {
-            @apply rounded-full px-2 py-0.5;
+    .ie-button {
+        @apply rounded-md bg-black text-white px-6 py-3 font-bold text-base w-fit flex-nowrap flex flex-row items-center justify-center hover:bg-inherit hover:text-black hover:outline outline-black outline-2 transition-colors focus:bg-white focus:text-black focus:outline md:text-2xl;
+
+        .material-icons {
+            animation: trans-arrow-button 1s linear infinite forwards;
         }
     }
 }
 
-.ie-button {
-    @apply rounded-md bg-black text-white px-6 py-3 font-bold text-base w-fit flex-nowrap flex flex-row items-center justify-center hover:bg-inherit hover:text-black hover:outline outline-black outline-2 transition-colors focus:bg-white focus:text-black focus:outline md:text-2xl;
-
-    .material-icons {
-        animation: ie-destak 1s ease-in-out infinite forwards;
+.info-banner {
+    div p:not(.subtitle) {
+        @apply text-slate-800 font-serif mb-5 last:mb-0;
+    }
+    p.subtitle {
+        @apply text-slate-600 font-medium font-sans mb-8 last:mb-0;
+    }
+    p.subtitle .destak {
+        @apply rounded-full px-2 py-0.5;
     }
 }
+
 
 .info-banner {
     @apply flex w-full flex-row text-justify md:text-lg;
 
     .side {
         @apply md:flex md:flex-1;
+    }
+}
+
+@keyframes trans-arrow-button {
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(35%);
+    }
+    100%{
+        transform: translateX(0);
     }
 }
