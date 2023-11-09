@@ -1,13 +1,7 @@
 @import "master";
 
-html{
-    scroll-snap-type: y mandatory;
-}
-
 .home-banner {
     @apply flex-col flex h-fit w-full items-center justify-center rounded-bl-[8rem] bg-slate-100 px-[1rem] pb-[1rem] pt-[4rem] shadow-sm shadow-slate-500 dark:bg-inherit dark:text-inherit md:flex-row md:px-[18%] md:text-xl lg:rounded-bl-[17rem] lg:pb-[0rem] lg:pr-0 lg:pt-[1rem];
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
 
     .banner-side {
         @apply flex flex-col text-center flex-1;

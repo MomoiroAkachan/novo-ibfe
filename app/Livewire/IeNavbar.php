@@ -17,7 +17,6 @@ class IeNavbar extends Component
         $this->p_routes = new Collection();
         $this->p_routes->push(['página inicial', ['home']]);
         $this->p_routes->push(['sobre', ['about']]);
-        $this->p_routes->push(['serviços', ['services']]);
         $this->p_routes->push(['o teste', ['test', 'profile.index', 'survey.index', 'survey.result.index']]);
     }
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="shortcut icon" href="{{ asset('assets/img/logo.svg') }}" type="image/x-icon">
 
     <title>@yield('title') / {{ Str::upper(config('app.name')) }}</title>
@@ -12,7 +13,7 @@
     <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
 
     @if (config('app.env') == 'production')
-{{--        <link rel="stylesheet" href="{{ asset('build/assets/home-37bed043.css') }}">--}}
+       <link rel="stylesheet" href="{{ asset('build/assets/home-a58142a7.css') }}">
     @else
         @vite(['resources/scss/master.scss', 'resources/js/ie-fwk.js'])
     @endif
@@ -58,7 +59,7 @@
 </body>
 
 @if (config('app.env') == 'production')
-    <script src="{{ asset('build/assets/ibfe_framework-0d84ccda.js') }}"></script>
+    <script src="{{ asset('build/assets/ie-fwk-3181b1e4.js') }}"></script>
 @endif
 <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </html>

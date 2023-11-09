@@ -10,7 +10,6 @@ Route::controller(HomeController::class)->group(function(){
     // Rotas principais
     Route::get('/', 'index')->name('home');
     Route::get('about', 'about')->name('about');
-    Route::get('services', 'services')->name('services');
     Route::get('test', 'test')->name('test')->middleware('user.acess');
 });
 

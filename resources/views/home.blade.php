@@ -4,7 +4,7 @@
 
 @section('head')
     @if (config('app.env') == 'production')
-        <link rel="stylesheet" href="{{ asset('build/assets/home-37bed043.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/assets/home-a58142a7.css') }}">
     @else
         @vite('resources/scss/home.scss')
     @endif
@@ -98,7 +98,7 @@
     </div>
 
     <div
-        class="mb-[3rem] flex h-fit flex-col rounded-lg border-2 border-[#a4c79a] px-[5%] py-[5%] shadow-lg md:px-[10%] lg:mb-[5rem]">
+        class="mb-[3rem] flex h-fit flex-col rounded-lg  bg-[#ceebc6] px-[5%] py-[5%] shadow-lg md:px-[10%] lg:mb-[5rem]">
         <h1 class="mb-7 h-fit w-full text-center font-serif text-3xl font-semibold text-gray-900 dark:text-emerald-50 lg:text-4xl">
             O que as pessoas pensam de nós?
         </h1>
@@ -114,7 +114,7 @@
                         <h2 class="text-md font-serif font-semibold lg:text-lg">
                             Prof. Nilton Cesar Lima
                         </h2>
-                        <p class="text-xs lg:text-sm">
+                        <p class="text-xs lg:text-[.7rem] font-light">
                             Universidade Federal de Uberlândia (UFU)
                         </p>
                     </div>
@@ -134,7 +134,7 @@
                         <h2 class="text-md font-serif font-semibold lg:text-lg">
                             Prof. Jorge Artur Peçanha de Miranda Coelho
                         </h2>
-                        <p class="text-xs lg:text-sm">
+                        <p class="text-xs lg:text-[.7rem] font-light">
                             Universidade Federal de Alagoas (UFAL)
                         </p>
                     </div>
@@ -155,7 +155,7 @@
                         <h2 class="text-md font-serif font-semibold lg:text-lg">
                             Profª. Chams Kumaira
                         </h2>
-                        <p class="text-xs lg:text-sm">
+                        <p class="text-xs lg:text-[.7rem] font-light">
                             Universidade Federal dos Vales do Jequitinhonha e Mucuri (UFVJM)
                         </p>
                     </div>

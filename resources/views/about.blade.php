@@ -2,6 +2,14 @@
 
 @section('title', 'Sobre')
 
+@section('head')
+    @if (config('app.env') == 'production')
+        <link rel="stylesheet" href="{{ asset('build/assets/about-b4c532a2.css') }}">
+    @else
+        @vite('resources/scss/about.scss')
+    @endif
+@endsection
+
 @section('pre-content')
     <div class="banner flex h-[10rem] w-full items-end justify-center bg-emerald-700 text-black md:h-[15rem]">
         <h1 class="w-fit rounded-t-md bg-white px-[2rem] py-[.7rem] text-center text-xl text-slate-900 dark:bg-slate-800 dark:text-slate-300 md:rounded-t-lg md:px-[4rem] md:py-[1.2rem] md:text-3xl">
@@ -77,7 +85,7 @@
         <div class="flex h-fit w-full flex-row flex-wrap justify-between py-4">
             @foreach ($team as $people)
                 <div class="flex flex-col items-center">
-                    <div class="h-[3cm] w-[3cm] relative flex-grow-0 flex-shrink-0 overflow-hidden rounded-full border border-sky-700 bg-white md:h-[4cm] md:w-[4cm]">
+                    <div class="h-[3cm] outline outline-4 outline-offset-4 outline-sky-400 w-[3cm] relative flex-grow-0 flex-shrink-0 overflow-hidden rounded-full bg-white md:h-[4cm] md:w-[4cm]">
                         <img alt="{{ $people['name'] }}" style="top:{{$people['origin'][1]}}%;left:{{$people['origin'][0]}}%; position: relative;" src="{{ $people['img'] }}" title="{{ $people['name'] }}">
                     </div>
                     <p class="mt-[1rem] relative w-full max-w-[3cm] bg-red-50 text-center text-sm font-normal">{{ $people['name'] }}</p>
