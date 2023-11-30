@@ -19,13 +19,6 @@
         @vite(['resources/scss/master.scss', 'resources/js/ie-fwk.js'])
     @endif
 
-    {{-- 
-    @if (config('app.env') == 'prod')
-       <link rel="stylesheet" href="{{ asset('build/assets/home-a58142a7.css') }}">
-    @else
-        @vite(['resources/scss/master.scss', 'resources/js/ie-fwk.js'])
-    @endif --}}
-
     @php
         if(!isset($ie_fixed_navbar))
             $ie_fixed_navbar = true;
@@ -41,6 +34,8 @@
 <body>
 {{-- Espaçador --}}
 <div class="flex bg-slate-100 h-[.6rem] flex-grow"></div>
+
+<a href="{{ route('profile.delete') }}" class="fixed bottom-0 right-0 z-10 px-4 py-2 rounded-md border border-green-200">Reiniciar Questionário</a>
 
 {{-- Navbar do site --}}
 @livewire('ie-navbar', ['ie_fix_navbar' => $ie_fixed_navbar, 'ie_show_navbar' => $ie_show_navbar])

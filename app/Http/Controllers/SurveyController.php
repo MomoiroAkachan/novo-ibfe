@@ -99,7 +99,9 @@ class SurveyController extends Controller
 
     public function showResult()
     {
-        return view('survey.result')->with('result', session()->get('surveyInfo'));
+        $p = new hSurveyData();
+        $buffer = $p->getMedia(session()->get('surveyInfo'));
+        return view('survey.result')->with('result', $buffer);
     }
 
     public function index(Request $r)
@@ -111,17 +113,7 @@ class SurveyController extends Controller
         return view('survey.index', compact('questions'));
     }
 
-    public function next($fun){
-        if($fun == 'next')
-        {
-            dd('Next');
-            Question::paginate(5)->nextPageUrl();
-        }
-        else
-        {
-            dd('ERRO!');
-        }
+    public function test(){
+        return view('test');
     }
-
-    public function prev(){}
 }

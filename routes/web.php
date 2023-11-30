@@ -16,8 +16,7 @@ Route::controller(HomeController::class)->group(function(){
 // Rotas relativas ao questionário
 Route::controller(SurveyController::class)->group(function(){
     Route::get('survey', 'index')->name('survey.index')->middleware('user.acess');
-    Route::post('survey/{fun}', 'store')->name('survey.store')->middleware('user.acess');
-    Route::get('survey/result', 'showResult')->name('survey.show.result')->middleware('user.acess');
+    Route::get('survey/result', 'showResult')->name('survey.show.results')->middleware('user.acess');
 });
 
 // Rotas relativas ao perfil
@@ -32,4 +31,4 @@ Route::controller(ProfileController::class)->group(function(){
 
 });
 
-Route::get('/que', [SurveyController::class, 'index'])->name('que');
+Route::get('/que', [SurveyController::class, 'test'])->name('que');

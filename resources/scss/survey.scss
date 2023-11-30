@@ -1,1 +1,29 @@
 @import "master";
+.survey-header{
+    @apply mt-8;
+}
+.survey-body{
+    .context{
+        @apply mt-4;
+        
+        .field{
+            @apply my-[1.2rem] flex h-fit w-full flex-col rounded-sm bg-white px-2 py-4 shadow-lg first:mt-0 last:mb-0;
+            
+            label{
+                @apply mb-2 flex flex-row items-center justify-start text-lg text-slate-700;
+            }
+            .number{
+                @apply mr-3 flex h-[2rem] w-[2rem] flex-col items-center justify-center rounded-full border-none bg-emerald-500 text-sm font-black text-white;
+            }
+            .text{
+
+            }
+            .star{
+                @apply text-sm font-black text-red-500;
+            }
+            .in_select{
+                @apply w-fit rounded-md border border-slate-300 bg-transparent px-2 py-2 text-xs text-slate-900;
+            }
+        }
+    }
+}

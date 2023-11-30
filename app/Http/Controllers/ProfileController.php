@@ -21,16 +21,15 @@ class ProfileController extends Controller
     }
 
     public function store(Request $request)
-    {        
-        $request->validate(['nome' => 'required|max:50|alpha']);
-
+    {
+        $request->validate(['nome' => 'required|max:100']);
         session_reset();
 
         $buffer = Question::pluck('number')->toArray();
         $buffer2 = [];
 
         foreach ($buffer as $key => $value) {
-            $buffer2 += ['q_' . $value => ''];
+            $buffer2 += [$value => '1'];
         }
 
         $sessionData = [
