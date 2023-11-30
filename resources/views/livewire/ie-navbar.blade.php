@@ -1,10 +1,10 @@
 <div @class(['ie-navbar', 'sticky' => $ie_fix_navbar, 'hidden' => !$ie_show_navbar, 'flex' => $ie_show_navbar])>
     <div class="brand">
         <a href="{{ route('home') }}">
-            <img alt="Logotipo do IBFE" class="w-[2cm] md:w-[1.7cm]" src="{{ asset('assets/img/logo.svg') }}">
+            <img alt="Logotipo do IBFE" class="h-[48px]" src="{{ asset('assets/img/logo.svg') }}">
         </a>
     </div>
-    <hr class="border-slate-300 md:hidden">
+
     <div class="hidden md:flex md:flex-grow">
     </div>
     <div class="menu">

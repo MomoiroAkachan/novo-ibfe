@@ -1,1 +1,45 @@
 @import "master";
+
+.banner{
+    @apply w-full h-[11rem] bg-emerald-300 relative;
+    .title{
+        @apply absolute bottom-1/2 left-1/2 translate-y-1/2 -translate-x-1/2 text-emerald-800 uppercase font-extrabold;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 2px;
+    }
+}
+.about-us{
+    @apply mt-8;
+    font-family: 'Roboto', sans-serif;
+    .title{
+        @apply mb-5 text-center text-2xl font-black uppercase text-slate-800 md:text-[3rem] md:font-bold;
+        font-family: 'Roboto', sans-serif;
+    }
+    p{
+        @apply text-xs text-justify last:mb-8;
+    }
+}
+
+.about-guide{
+    @apply flex flex-col;
+
+    .double-flex{
+        @apply flex flex-row;
+        .pt{
+            @apply flex flex-col flex-1;
+        }
+        .pi{
+            @apply hidden md:flex md:flex-col md:flex-1;
+        }
+    }
+    p.special{
+        @apply md:border-0 mb-8 bg-emerald-50 border-2 border-emerald-400 p-3 rounded-sm mt-4 flex flex-col h-fit flex-shrink text-left text-xs md:text-sm;
+    }
+}
+
+.equip-guide{
+    @apply flex flex-col justify-center items-center flex-wrap mt-7;
+    .equip-box{
+        @apply flex flex-row flex-wrap justify-between py-4;
+    }
+}

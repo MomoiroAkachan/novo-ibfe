@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="{{ Str::of(config('app.locale'))->replace('_', '-') }}">
 <head>
+    {{-- Algumas metatags --}}
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <link rel="shortcut icon" href="{{ asset('assets/img/logo.svg') }}" type="image/x-icon">
 
+    {{-- Recursos do site --}}    
+    <link rel="shortcut icon" href="../../images/app_logo.svg" type="image/x-icon">
     <title>@yield('title') / {{ Str::upper(config('app.name')) }}</title>
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
+
 
     @if (config('app.env') == 'production')
-       <link rel="stylesheet" href="{{ asset('build/assets/home-a58142a7.css') }}">
+        <link rel="stylesheet" href="build/assets/master.css">
     @else
         @vite(['resources/scss/master.scss', 'resources/js/ie-fwk.js'])
     @endif
+
+    {{-- 
+    @if (config('app.env') == 'prod')
+       <link rel="stylesheet" href="{{ asset('build/assets/home-a58142a7.css') }}">
+    @else
+        @vite(['resources/scss/master.scss', 'resources/js/ie-fwk.js'])
+    @endif --}}
 
     @php
         if(!isset($ie_fixed_navbar))
@@ -51,15 +59,14 @@
 {{-- Conteúdo pós-contexto --}}
 @yield('post-content')
 
-{{-- Espaçamento para o rodapé --}}
-<div class="m-[20%] w-full"></div>
-
 {{-- Rodapé --}}
 @include('layouts.footer_data')
 </body>
 
-@if (config('app.env') == 'production')
+{{-- @if (config('app.env') == 'prod')
     <script src="{{ asset('build/assets/ie-fwk-3181b1e4.js') }}"></script>
-@endif
+@endif --}}
+
 <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
 </html>

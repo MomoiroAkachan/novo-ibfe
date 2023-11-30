@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Question;
+use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use PHPUnit\TestRunner\TestResult\Collector;
 
 class hSurveyData
@@ -85,21 +88,13 @@ class hSurveyData
     }
 }
 
+
 class SurveyController extends Controller
 {
-    public $m_surveyData = [];
-
-    public function __construct()
-    {
-        $this->m_surveyData = new hSurveyData();
-    }
-
     public function store(Request $request)
     {
-        $raw = new Collection($request->all());
-        $data = $raw->values()->forget(0);
-        session()->put('surveyInfo', $this->m_surveyData->getMedia($data->toArray()));
-        return redirect()->route('survey.show.result');
+        session()->put('surveyInfo', $request->input());
+        return $this->showResult();
     }
 
     public function showResult()
@@ -109,9 +104,24 @@ class SurveyController extends Controller
 
     public function index(Request $r)
     {
-        $questions = Question::all();
-        return view('survey.index', [
-            'quest' => $questions
-        ]);
+        $questions = Question::paginate(5);
+
+        $answers = $r->input();
+
+        return view('survey.index', compact('questions'));
     }
+
+    public function next($fun){
+        if($fun == 'next')
+        {
+            dd('Next');
+            Question::paginate(5)->nextPageUrl();
+        }
+        else
+        {
+            dd('ERRO!');
+        }
+    }
+
+    public function prev(){}
 }

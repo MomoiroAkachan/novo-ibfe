@@ -176,29 +176,6 @@
     margin-right: 0.5rem;
 }
 
-.ie-carousel {
-    &.ibfe-ver .ie-item {
-        @apply my-[1rem] w-[75%] md:w-[55%] lg:w-[40%] flex-col items-center rounded-xl border bg-white md:px-8 px-2 py-6 text-center shadow-lg hidden;
-    }
-
-    &.ibfe-ver .ie-title {
-        @apply mb-4 font-serif text-base font-bold uppercase md:text-2xl lg:text-2xl;
-    }
-
-    &.ibfe-ver .ie-description {
-        @apply mb-2 text-sm md:text-base;
-    }
-
-
-    &.ibfe-ver .ie-link {
-        @apply flex h-fit w-full flex-row flex-nowrap items-center justify-center p-0 text-xs transition-colors hover:text-sky-700 dark:hover:text-emerald-400;
-    }
-
-    &.ibfe-ver .material-icons {
-        @apply text-sm;
-    }
-}
-
 footer {
     p, a {
         @apply font-light;
