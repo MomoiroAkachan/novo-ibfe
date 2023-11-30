@@ -41,10 +41,10 @@
     </section>
 
     <section class="about-guide">
-        <div class="double-flex mb-8">
+        <div class="double-flex">
             <div class="pt">
-                <h3 class="mb-4 text-left font-semibold">Como utilizar o IBFE-Web?</h3>
-                <p class="font-light text-sm">
+                <h3 class="title">Como utilizar o IBFE-Web?</h3>
+                <p class="content">
                     Será apresentado um questionário com uma série de itens que representam as dimensões do IBFE. Após a resposta à bateria de itens, o sistema irá gerar o resultado e indicar o seu perfil empreendedor / intraempreendedor, e você poderá
                     guardar, registrar e até compartilhar com outras pessoas.
                 </p>
@@ -56,22 +56,29 @@
 
 
         <div class="double-flex justify-between items-center">
-            <span class="mr-[.2rem] hidden md:flex flex-col items-center justify-center text-[6cm] font-light text-[#9fdf] md:mr-[.5rem]" style="transform: scaleY(1.2);">{</span>
+            <span class="mr-[.2rem] hidden md:flex flex-col items-center justify-center text-[6cm] font-light text-[#9fdf] md:mr-[.5rem]">{</span>
 
-                <p class="special">
-                    1 - Leia atentamente a lista de comportamentos e características descritos no formulário de aplicação, considerando seu conteúdo. <br>
-                    2 - Utilizando a escala de resposta tipo Likert de 5 pontos, variando de 1 = Não me descreve a 5 = Descreve-me totalmente; marque o número em cada item para indicar em que medida você considera que a frase lhe descreve.
-                </p>
+                <div class="special">
+                    <ol>
+                        <li>Conte-nos sobe você. Coloque algumas informações sobre você na página de perfil, a primeira página do teste;</li>
+                        <li>Leia atentamente a lista de comportamentos e características descritos no formulário, considerando seu conteúdo;</li>
+                        <li>Utilizando a escala de resposta tipo <i>Likert</i> de 5 pontos, variando de 1 (Não me descreve) a 5 (Descreve-me totalmente);</li>
+                        <li>Marque o número em cada item para indicar em que medida você considera que a frase lhe descreve.</li>
+                        <li>Após Responder todas as questões, clique no botão de <span>enviar</span>, para que seu progresse seja salvo e seu perfil calculado.</li>
+                        <li>Agora, é só aguardar pelo resultado</li>
+                    </ol>
+                </div>
 
-            <span class="ml-[.2rem] md:flex hidden items-center justify-center text-[6cm] font-light text-[#9fdf] md:ml-[.5rem]" style="transform: scaleY(1.2);">}</span>
+            <span class="ml-[.2rem] md:flex hidden items-center justify-center text-[6cm] font-light text-[#9fdf] md:ml-[.5rem]">}</span>
         </div>
+        
         <div class="double-flex mb-8">
             <div class="pi">
                 <img src="{{ asset('assets/img/s-guy.jpeg') }}">
             </div>
             <div class="pt">
-                <h3 class="mb-4 text-left font-semibold">O Resultado</h3>
-                <p class="text-sm font-light md:text-lg">
+                <h3 class="title">O Resultado</h3>
+                <p class="content">
                     Após a conclusão do questionário, a aplicação usará de alguns critérios antes de retornar um resultado de forma definitiva ao usuário, com base em diversos fatores abordados neste <a class="text-sky-700 underline hover:text-sky-400"
                         href="http://dx.doi.org/10.51859/amplla.aet474.1121-1">e-book</a>, o qual foi usado como base teórica para o desenvolvimento da aplicação. Mapeando, assim, o seu perfil empreendedor.
                 </p>
@@ -86,11 +93,11 @@
 
         <div class="equip-box">
             @foreach ($team as $people)
-                <div class="flex flex-col items-center m-4">
-                    <div class="relative h-[3cm] w-[3cm] flex-shrink-0 flex-grow-0 overflow-hidden rounded-full bg-white outline outline-4 outline-offset-4 outline-sky-400 md:h-[4cm] md:w-[4cm]">
+                <div class="flex flex-col items-center m-2">
+                    <div class="frame">
                         <img alt="{{ $people['name'] }}" src="{{ $people['img'] }}" style="top:{{ $people['origin'][1] }}%;left:{{ $people['origin'][0] }}%; position: relative;" title="{{ $people['name'] }}">
                     </div>
-                    <p class="relative mt-[1rem] w-full max-w-[3cm] bg-red-50 text-center text-sm font-normal">{{ $people['name'] }}</p>
+                    <p class="desc">{{ $people['name'] }}</p>
                 </div>
             @endforeach
         </div>

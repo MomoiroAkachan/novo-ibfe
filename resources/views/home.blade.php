@@ -17,7 +17,7 @@
     <section class="home-banner">
         <div class="banner-side left">
             <h1 class="banner-title">
-                Bem vindo ao <span class="font-[inherit] text-emerald-800 dark:text-emerald-400">IBFE</span>
+                Bem vindo ao <span class="text-emerald-800">IBFE</span>
             </h1>
             <p class="banner-body">
                 O ponto de partida para seu sucesso profissional.
