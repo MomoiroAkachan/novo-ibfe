@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\GuideController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SurveyController;
 use Illuminate\Support\Facades\Route;
 
 /*
