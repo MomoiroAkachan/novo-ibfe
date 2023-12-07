@@ -13,6 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// rotas relativas ao perfil.
+Route::controller(ProfileController::class)->group(function(){
+    Route::get("/perfil", 'index')->name('profile');
+    Route::post("/perfil/store", 'store')->name('profile.store');
+    Route::delete("/perfil/delete", "delete")->name('profile.delete');
+});
+
+// rotas relativas ao questionário
+Route::controller(SurveyController::class)->group(function(){
+    Route::get("/questionario", 'index')->name('survey');
+    Route::get("/questionario/resultados", 'show_results')->name('survey.show_results');
+});
+
+// rotas relativas à homepage
+Route::controller(HomeController::class)->group(function(){
+    Route::get("/", 'index')->name('home');
+});
+
+// rotas relativas ao guia
+Route::controller(GuideController::class)->group(function(){
+    Route::get("/guia", 'index')->name('guide');
 });
