@@ -1,0 +1,167 @@
+@import "base";
+
+.ie-navbar {
+    @apply items-center justify-between top-0 left-0 right-0 w-full shadow-md flex-row bg-slate-100 px-[1rem] lg:px-[1.5rem];
+    z-index: 100;
+
+    .brand {
+        @apply h-fit w-fit items-center;
+    }
+
+    .menu {
+        @apply mx-[.5rem] mb-[1rem] mt-[0.5rem] flex flex-row flex-nowrap lg:mt-2;
+
+        ul {
+            @apply flex h-fit w-full list-none flex-row flex-nowrap justify-between;
+
+            li {
+                @apply mx-[0.5rem] flex items-center flex-col;
+
+                a {
+                    @apply transition-colors capitalize text-[medium] text-slate-900 hover:text-sky-600 dark:text-inherit hover:dark:text-emerald-400;
+                    font-family: 'Jost';
+                }
+            }
+        }
+    }
+
+    .route-indicator-selected {
+        @apply bg-emerald-400 transition-all;
+        transition: all 0.3s ease;
+
+        animation: 0.3s linear 0s 1 ie-nav-appear;
+        animation-fill-mode: forwards;
+    }
+
+    .route-indicator-unselected {
+        transition: all 0.3s ease;
+        width: 0;
+    }
+}
+
+.ie-carousel {
+    overflow: hidden;
+    position: relative;
+    .ie-item {
+        animation: 0.8s ease-in-out ie-slide;
+        position: relative;
+        &:not(.active) {
+            display: none;
+        }
+        &.active {
+            display: flex;
+        }
+    }
+}
+
+.ie-button {
+    @apply rounded-md bg-black h-fit text-white w-fit flex-nowrap flex items-center justify-center hover:bg-inherit hover:text-black hover:outline outline-black outline-2 transition-colors focus:bg-white focus:text-black focus:outline;
+    &.big {
+        @apply font-bold text-lg px-6 py-3;
+    }
+    &.medium {
+        @apply text-base py-2 px-4 font-medium;
+    }
+    &.small {
+        @apply text-sm py-1.5 px-3 font-normal;
+    }
+}
+
+@keyframes ie-nav-appear {
+    from {
+        width: 0;
+    }
+    to {
+        width: 85%;
+    }
+}
+
+@keyframes ie-slide {
+    from {
+        transform: translate(-100%);
+        opacity: 0;
+        display: none;
+    }
+    to {
+        transform: translate(0);
+        opacity: 1;
+        display: flex;
+    }
+}
+
+.ie-card {
+    @apply flex h-fit flex-col rounded-md px-8 py-4 border-slate-300 border w-full;
+    box-shadow: 2px 4px 12px rgba(20, 28, 30, 0.15);
+}
+
+.ie-card:focus {
+    @apply border border-sky-600;
+}
+
+.ie-card .head .title {
+    @apply text-center font-bold text-slate-800;
+    font-size: 2rem;
+}
+
+.ie-card .head .subtitle {
+    @apply w-[55%] text-left;
+    font-size: 0.7rem;
+}
+
+.ie-card fieldset {
+    @apply relative my-[1.5rem] flex w-full flex-col justify-center border-b border-b-slate-500;
+}
+
+.ie-card fieldset .inputline {
+    @apply flex flex-row items-center;
+}
+
+.ie-card fieldset .inputline img {
+    @apply h-[1.5rem] select-none;
+}
+
+.ie-card fieldset label {
+    @apply absolute z-0 ml-[2rem] select-none text-[.7rem] text-slate-400 transition-transform;
+}
+
+.ie-card fieldset .inputline input,
+.ie-card fieldset .inputline select {
+    @apply relative z-10 ml-1 flex w-full border-b bg-transparent py-[.25rem] outline-none;
+}
+
+.ie-card fieldset input:focus ~ label,
+.ie-card fieldset input:valid ~ label,
+.ie-card fieldset select:focus ~ label,
+.ie-card fieldset select:valid ~ label {
+    transform: translateY(-1.5rem);
+    transition: all 0.3s ease-in-out;
+    @apply font-semibold text-slate-950;
+}
+
+.ie-card input[type="date"] {
+    @apply select-none text-transparent;
+}
+
+.ie-card input[type="date"]:valid {
+    @apply select-auto text-black;
+}
+
+.ie-card .google-login {
+    @apply flex flex-row items-center justify-center rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-500 transition-colors;
+    box-shadow: 1px 2px 3px rgba(20, 28, 30, 0.15);
+}
+
+.ie-card .google-login:hover {
+    box-shadow: 2px 3px 3px rgba(20, 28, 30, 0.15);
+}
+
+.ie-card .google-login img {
+    width: 1rem;
+    margin-right: 0.5rem;
+}
+
+footer {
+    p, a {
+        @apply font-light;
+    }
+}

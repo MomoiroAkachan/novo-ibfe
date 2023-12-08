@@ -1,0 +1,19 @@
+@import '../css/app.css';
+
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../public/assets/fnt/Roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('../../public/assets/fnt/Jost/Jost-VariableFont_wght.ttf');
+}
+
+* {
+    @apply text-base font-normal;
+    font-family: "Roboto", sans-serif;
+}
